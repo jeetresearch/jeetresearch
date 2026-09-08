@@ -1,0 +1,4171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The JeetResearch | Astro Stock Market Analysis</title>
+<meta name="description" content="Financial Astrology meets Stock Market Analysis. Live Nifty & Bank Nifty signals, Moon Phase, Grah Swami, Navagraha positions & Hora timeline. Join The JeetResearch community.">
+<meta name="keywords" content="financial astrology, stock market astrology, nifty analysis, vedic astrology, bank nifty, jyotish market, astrology trading">
+<link rel="canonical" href="https://thejeetresearch.netlify.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The JeetResearch | Astrology × Stock Market Analysis">
+<meta property="og:description" content="Financial Astrology meets Stock Market Analysis. Live Nifty & Bank Nifty signals, daily Cosmic Market Insights, and a free trading community.">
+<meta property="og:url" content="https://thejeetresearch.netlify.app/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The JeetResearch | Astrology × Stock Market Analysis">
+<meta name="twitter:description" content="Financial Astrology meets Stock Market Analysis. Live Nifty & Bank Nifty signals and daily Cosmic Market Insights.">
+
+<meta name="theme-color" content="#071a14">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JeetResearch">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ===== Google Analytics (GA4) ===== -->
+<!-- Replace G-97S2H7HM8L below with your own GA4 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-97S2H7HM8L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-97S2H7HM8L');
+</script>
+<!-- ===== End Google Analytics ===== -->
+
+<!-- ===== Meta (Facebook/Instagram) Pixel ===== -->
+<!-- Replace 2090003855268371 below with your own Meta Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2090003855268371');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2090003855268371&ev=PageView&noscript=1"
+/></noscript>
+<!-- ===== End Meta Pixel ===== -->
+<style>
+  :root{
+    --bg-deep: #071a14;
+    --bg-mid: #0f2e22;
+    --bg-violet: #123d2c;
+    --gold: #c9a227;
+    --gold-bright: #e8c14d;
+    --ember: #d4622f;
+    --mystic-purple: #1a5c42;
+    --starlight: #f3f0e6;
+    --text-dim: #a8c4b5;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  /* ---------- Professional Polish Layer ---------- */
+  html{ scroll-behavior: smooth; }
+
+  ::selection{
+    background: rgba(201,162,39,0.35);
+    color: var(--starlight);
+  }
+
+  a, button, input, .cta-btn, .cta-btn-secondary, .tool-btn, .calc-btn{
+    outline: none;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  .cta-btn:focus-visible, .cta-btn-secondary:focus-visible,
+  .tool-btn:focus-visible, .calc-btn:focus-visible{
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  body{
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Refined readable line-height for dense body copy */
+  .why-text-body, .feature-body, .result-detail, .advance-archive-text,
+  .cta-sub, .calc-note, .results-disclaimer{
+    line-height: 1.65;
+  }
+
+  /* Consistent card depth across all major cards */
+  .why-item, .feature-card, .result-card, .tool-card,
+  .calc-card, .advance-today-card, .countdown-card, .signal-card{
+    box-shadow: 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+
+  /* Eyebrow / label text — slightly wider tracking for a premium feel */
+  .market-pulse-label, .advance-date, .advance-archive-title,
+  .result-instrument, .countdown-label{
+    letter-spacing: 0.16em;
+  }
+
+  /* ---------- Manuscript Panel Styling (corner ornaments + double border) ---------- */
+  .why-item, .feature-card, .result-card, .tool-card,
+  .calc-card, .advance-today-card, .countdown-card, .signal-card{
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .why-item::before, .feature-card::before, .result-card::before, .tool-card::before,
+  .calc-card::before, .advance-today-card::before, .countdown-card::before, .signal-card::before{
+    content:'';
+    position:absolute;
+    inset: 5px;
+    border: 1px solid rgba(201,162,39,0.18);
+    border-radius: inherit;
+    pointer-events:none;
+  }
+  .why-item::after, .feature-card::after, .result-card::after, .tool-card::after,
+  .calc-card::after, .advance-today-card::after, .countdown-card::after, .signal-card::after{
+    content:'✦';
+    position:absolute;
+    top: 8px; left: 10px;
+    font-size: 10px;
+    color: rgba(201,162,39,0.55);
+    pointer-events:none;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ---------- Floating WhatsApp Channel Button ---------- */
+  .floating-whatsapp{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 6px 20px -4px rgba(37,211,102,0.6);
+    text-decoration:none;
+    transition: transform 0.25s ease;
+  }
+  .floating-whatsapp:hover{ transform: scale(1.08); }
+  .floating-whatsapp::before{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    border: 2px solid #25D366;
+    opacity:0;
+    animation: liveRingPulse 2.4s ease-out infinite;
+  }
+  @media (max-width: 600px){
+    .floating-whatsapp{
+      bottom: 18px;
+      right: 18px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  /* ---------- Scroll Progress Bar ---------- */
+  .scroll-progress-track{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(7,26,20,0.4);
+    z-index: 1000;
+  }
+  .scroll-progress-fill{
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+    box-shadow: 0 0 8px 1px rgba(232,193,77,0.6);
+    transition: width 0.1s ease-out;
+  }
+
+  /* ---------- Motion / Shake Gesture Effects ---------- */
+  #stars{
+    transition: transform 0.15s ease-out;
+  }
+  .bg-scene{
+    transition: transform 0.15s ease-out;
+  }
+
+  @keyframes shakePulse{
+    0%   { transform: translate(0,0) rotate(0deg); }
+    15%  { transform: translate(-6px, 3px) rotate(-0.6deg); }
+    30%  { transform: translate(5px, -4px) rotate(0.6deg); }
+    45%  { transform: translate(-4px, 4px) rotate(-0.4deg); }
+    60%  { transform: translate(4px, -3px) rotate(0.4deg); }
+    75%  { transform: translate(-2px, 2px) rotate(-0.2deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+  }
+  body.shaking{
+    animation: shakePulse 0.5s ease-in-out;
+  }
+
+  .shake-toast{
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight:700;
+    font-size: 14px;
+    z-index: 1001;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    box-shadow: 0 10px 30px -6px rgba(201,162,39,0.6);
+    white-space: nowrap;
+  }
+  .shake-toast.show{
+    opacity:1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .motion-enable-btn{
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 1001;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(7,26,20,0.75);
+    border: 1px solid rgba(201,162,39,0.5);
+    color: var(--gold-bright);
+    font-size: 12px;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  /* ---------- Section Visual Rhythm (alternating tints to break monotony) ---------- */
+  section{
+    position: relative;
+  }
+  section::before{
+    content:'';
+    position:absolute;
+    top:0; left:50%;
+    width: 140vw;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events:none;
+    opacity: 0.5;
+  }
+  section:nth-of-type(3n+1)::before{
+    background: radial-gradient(ellipse at 30% 0%, rgba(201,162,39,0.06), transparent 60%);
+  }
+  section:nth-of-type(3n+2)::before{
+    background: radial-gradient(ellipse at 70% 100%, rgba(26,92,66,0.10), transparent 60%);
+  }
+  section:nth-of-type(3n+3)::before{
+    background: radial-gradient(ellipse at 50% 50%, rgba(212,98,47,0.05), transparent 65%);
+  }
+
+  /* Section divider ornament between sections */
+  .section-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+    max-width: 240px;
+    margin: 50px auto 0;
+    opacity: 0.55;
+  }
+  .section-divider::before, .section-divider::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background: linear-gradient(90deg, transparent, rgba(201,162,39,0.6), transparent);
+  }
+  .section-divider span{
+    color: var(--gold);
+    font-size: 14px;
+  }
+
+  /* ---------- Scroll Reveal Animation System ---------- */
+  .reveal{
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-scale{
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-scale.visible{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .reveal-left{
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-left.visible{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right{
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-right.visible{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Animated shimmer on section headings */
+  @keyframes shimmerGlow{
+    0%, 100%{ text-shadow: 0 0 12px rgba(201,162,39,0.25); }
+    50%{ text-shadow: 0 0 26px rgba(232,193,77,0.55); }
+  }
+  .why-heading, .market-pulse-label{
+    animation: shimmerGlow 3.5s ease-in-out infinite;
+  }
+
+  /* Gentle floating animation for icons/glyphs */
+  @keyframes floatY{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-8px); }
+  }
+  .why-icon, .feature-glyph, .signal-icon{
+    animation: floatY 4s ease-in-out infinite;
+  }
+
+  html,body{
+    background: var(--bg-deep);
+    color: var(--starlight);
+    font-family: 'Hind', sans-serif;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+  }
+
+  .display{
+    font-family: 'Yatra One', serif;
+  }
+  .accent-serif{
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ---------- Background layers ---------- */
+  .cosmos{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(26,92,66,0.25), transparent 55%),
+      radial-gradient(ellipse at 85% 75%, rgba(212,98,47,0.15), transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(18,61,44,0.9), transparent 70%),
+      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 45%, var(--bg-violet) 100%);
+  }
+
+  #stars{
+    position: fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+  }
+
+  .star{
+    position:absolute;
+    background: var(--starlight);
+    border-radius:50%;
+    animation: twinkle linear infinite;
+    opacity:0.6;
+  }
+
+  @keyframes twinkle{
+    0%,100%{ opacity:0.15; transform:scale(0.8);}
+    50%{ opacity:1; transform:scale(1.15);}
+  }
+
+  /* faint constellation lines */
+  .constellations{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    opacity:0.35;
+    pointer-events:none;
+  }
+
+  /* ---------- Ambient background planets & charts ---------- */
+  .bg-scene{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .bg-planet{
+    position:absolute;
+    border-radius:50%;
+    opacity:0.55;
+    animation: drift ease-in-out infinite, spin 60s linear infinite;
+    filter: blur(0.3px);
+  }
+
+  .bg-planet::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background: radial-gradient(circle at 32% 30%, rgba(255,255,255,0.55), transparent 55%);
+  }
+
+  .bp-1{ width:70px; height:70px; top:8%; left:6%;
+    background: radial-gradient(circle at 35% 30%, #e8c14d, #b5893c 70%);
+    box-shadow: 0 0 40px 6px rgba(201,162,39,0.35);
+    animation-duration: 16s, 70s; }
+
+  .bp-2{ width:46px; height:46px; top:64%; left:3%;
+    background: radial-gradient(circle at 35% 30%, #c99bf0, #6a4a9e 70%);
+    box-shadow: 0 0 30px 6px rgba(26,92,66,0.35);
+    animation-duration: 13s, 55s; }
+
+  .bp-3{ width:100px; height:100px; top:14%; right:5%;
+    background: radial-gradient(circle at 35% 30%, #f5a76e, #b5502a 70%);
+    box-shadow: 0 0 55px 10px rgba(212,98,47,0.3);
+    animation-duration: 20s, 90s; }
+
+  .bp-3-ring{
+    position:absolute; top:50%; left:50%;
+    width:150%; height:36%;
+    border: 2px solid rgba(232,193,77,0.5);
+    border-radius:50%;
+    transform: translate(-50%,-50%) rotate(-18deg);
+  }
+
+  .bp-4{ width:34px; height:34px; top:40%; right:12%;
+    background: radial-gradient(circle at 35% 30%, #9fd8c9, #4ADE80 70%);
+    box-shadow: 0 0 22px 5px rgba(74,222,128,0.3);
+    animation-duration: 11s, 40s; }
+
+  .bp-5{ width:58px; height:58px; bottom:10%; right:8%;
+    background: radial-gradient(circle at 35% 30%, #e8c14d, #7a5a2a 70%);
+    box-shadow: 0 0 34px 6px rgba(201,162,39,0.3);
+    animation-duration: 18s, 65s; }
+
+  .bp-6{ width:26px; height:26px; bottom:22%; left:14%;
+    background: radial-gradient(circle at 35% 30%, #d7c6f5, #1a5c42 70%);
+    box-shadow: 0 0 18px 4px rgba(26,92,66,0.3);
+    animation-duration: 9s, 30s; }
+
+  .bp-7{ width:40px; height:40px; top:36%; left:22%;
+    background: radial-gradient(circle at 35% 30%, #f5a76e, #b5502a 70%);
+    box-shadow: 0 0 26px 5px rgba(212,98,47,0.3);
+    animation-duration: 15s, 48s; }
+
+  .bp-8{ width:20px; height:20px; top:78%; right:24%;
+    background: radial-gradient(circle at 35% 30%, #e8c14d, #b5893c 70%);
+    box-shadow: 0 0 16px 3px rgba(201,162,39,0.3);
+    animation-duration: 10s, 36s; }
+
+  @keyframes drift{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-26px); }
+  }
+
+  .bg-chart{
+    position:absolute;
+    opacity:0.28;
+    animation: drift ease-in-out infinite;
+  }
+
+  .bc-1{ top:26%; left:16%; width:110px; animation-duration: 15s; }
+  .bc-2{ top:58%; right:16%; width:130px; animation-duration: 19s; }
+  .bc-3{ bottom:6%; left:32%; width:95px; animation-duration: 12s; }
+
+  /* ---------- Layout ---------- */
+  .wrap{
+    position:relative;
+    z-index:2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.hero{
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 80px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  header.hero::before{
+    content:'';
+    position:absolute;
+    top:50%; left:50%;
+    width: 900px;
+    height: 900px;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(circle, rgba(201,162,39,0.14), rgba(212,98,47,0.06) 45%, transparent 70%);
+    z-index:-1;
+    animation: heroGlowShift 10s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes heroGlowShift{
+    0%, 100%{ transform: translate(-50%,-50%) scale(1); opacity:0.9; }
+    50%{ transform: translate(-50%,-50%) scale(1.12); opacity:1; }
+  }
+
+  .eyebrow{
+    letter-spacing: 0.35em;
+    text-transform:uppercase;
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 22px;
+    font-weight:600;
+    opacity:0.9;
+  }
+
+  .eyebrow::before, .eyebrow::after{
+    content:'✦';
+    margin: 0 10px;
+    opacity:0.7;
+  }
+
+  h1.brand{
+    font-size: clamp(38px, 7vw, 84px);
+    line-height: 1.05;
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold) 40%, var(--mystic-purple) 75%, var(--gold-bright));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s ease-in-out infinite;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+
+  @keyframes shimmer{
+    0%,100%{ background-position: 0% center; }
+    50%{ background-position: 100% center; }
+  }
+
+  .subhead{
+    font-family:'Cormorant Garamond', serif;
+    font-size: clamp(19px, 2.6vw, 27px);
+    color: var(--text-dim);
+    max-width: 620px;
+    line-height:1.6;
+    margin-bottom: 44px;
+    font-style: italic;
+  }
+
+  /* ---------- Signature: zodiac + candlestick core ---------- */
+  .orrery{
+    position: relative;
+    width: min(78vw, 420px);
+    height: min(78vw, 420px);
+    margin: 10px auto 46px;
+  }
+
+  .orrery svg{ width:100%; height:100%; display:block; }
+
+  .ring-rotate{
+    animation: spin 90s linear infinite;
+    transform-origin: 210px 210px;
+  }
+  .ring-rotate-rev{
+    animation: spin-rev 130s linear infinite;
+    transform-origin: 210px 210px;
+  }
+  .chart-ring-rotate{
+    animation: spin 55s linear infinite;
+    transform-origin: 210px 210px;
+  }
+
+  @keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  @keyframes spin-rev{ from{transform:rotate(360deg);} to{transform:rotate(0deg);} }
+
+  .planet-orbit{
+    position:absolute;
+    top:50%; left:50%;
+    border: 1px solid rgba(201,162,39,0.18);
+    border-radius:50%;
+    transform: translate(-50%,-50%);
+  }
+  .planet-orbit.o1{ width:40%; height:40%; animation: spin 9s linear infinite; }
+  .planet-orbit.o2{ width:58%; height:58%; animation: spin-rev 16s linear infinite; }
+  .planet-orbit.o3{ width:76%; height:76%; animation: spin 24s linear infinite; }
+  .planet-orbit.o4{ width:94%; height:94%; animation: spin-rev 34s linear infinite; }
+  .planet-orbit.o5{ width:100%; height:100%; animation: spin 46s linear infinite; }
+
+  .planet{
+    position:absolute;
+    top:-9px; left:50%;
+    width:18px; height:18px;
+    border-radius:50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 16px 4px currentColor;
+  }
+  .planet::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.65), transparent 60%);
+  }
+  .p-gold{ color: var(--gold-bright); background: var(--gold-bright); }
+  .p-ember{ color: var(--ember); background: var(--ember); }
+  .p-purple{ color: var(--mystic-purple); background: var(--mystic-purple); }
+  .p-green{ color: #4ADE80; background: #4ADE80; width:13px; height:13px; }
+
+  .p-ring{
+    position:absolute;
+    top:-10px; left:50%;
+    width:30px; height:30px;
+    transform: translateX(-50%);
+    border: 1.5px solid rgba(232,193,77,0.8);
+    border-radius:50%;
+  }
+  .p-ring::before{
+    content:'';
+    position:absolute;
+    top:7px; left:7px;
+    width:16px; height:16px;
+    border-radius:50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 12px 3px var(--gold-bright);
+  }
+  .p-ring::after{
+    content:'';
+    position:absolute;
+    top:10px; left:10px;
+    width:10px; height:10px;
+    border-radius:50%;
+    background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.65), transparent 60%);
+  }
+
+  .core-glow{
+    position:absolute;
+    top:50%; left:50%;
+    width: 34%;
+    height: 34%;
+    transform: translate(-50%,-50%);
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(232,193,77,0.35), rgba(201,162,39,0.05) 70%);
+    filter: blur(2px);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:0.6; }
+    50%{ opacity:1; }
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding: 18px 42px;
+    font-family:'Hind', sans-serif;
+    font-size: 18px;
+    font-weight:700;
+    color: var(--bg-deep);
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    border-radius: 999px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+    box-shadow: 0 8px 30px -6px rgba(201,162,39,0.55), 0 0 0 1px rgba(232,193,77,0.4) inset;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .cta-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px -6px rgba(201,162,39,0.75), 0 0 0 1px rgba(232,193,77,0.6) inset;
+  }
+  .cta-btn:focus-visible{
+    outline: 2px solid var(--starlight);
+    outline-offset: 4px;
+  }
+
+  .cta-btn-whatsapp{
+    background: linear-gradient(120deg, #34E176, #1DA851);
+    color: #ffffff;
+    box-shadow: 0 8px 30px -6px rgba(37,211,102,0.55), 0 0 0 1px rgba(52,225,118,0.4) inset;
+  }
+  .cta-btn-whatsapp:hover{
+    box-shadow: 0 12px 36px -6px rgba(37,211,102,0.75), 0 0 0 1px rgba(52,225,118,0.6) inset;
+  }
+  .cta-live-wrap-wa::before, .cta-live-wrap-wa::after{
+    border-color: #34E176;
+  }
+
+  /* ---------- Live pulsing ring for hero CTA ---------- */
+  .cta-live-wrap{
+    position:relative;
+    display:inline-block;
+  }
+  .cta-live-wrap::before,
+  .cta-live-wrap::after{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:999px;
+    border: 2px solid var(--gold-bright);
+    opacity:0;
+    animation: liveRingPulse 2.2s ease-out infinite;
+    pointer-events:none;
+  }
+  .cta-live-wrap::after{ animation-delay: 1.1s; }
+  @keyframes liveRingPulse{
+    0%{ opacity:0.7; transform:scale(1); }
+    100%{ opacity:0; transform:scale(1.18); }
+  }
+
+  .cta-live-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding: 6px 16px;
+    margin-bottom: 12px;
+    border-radius:999px;
+    background: rgba(7,26,20,0.55);
+    border: 1px solid rgba(201,162,39,0.5);
+    font-size: 12px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    color: var(--gold-bright);
+  }
+  .cta-live-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:#4ADE80;
+    box-shadow: 0 0 8px 2px #4ADE80;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .cta-live-count{
+    color: var(--starlight);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cta-sub{
+    margin-top:16px;
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.03em;
+  }
+
+  .brahmastra-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding: 18px 42px;
+    font-family:'Hind', sans-serif;
+    font-size: 18px;
+    font-weight:700;
+    color: #071a14;
+    background: linear-gradient(120deg, #e8c14d, #c9a227);
+    border-radius: 999px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+    box-shadow: 0 8px 30px -6px rgba(201,162,39,0.55), 0 0 0 1px rgba(232,193,77,0.4) inset;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+  }
+  .brahmastra-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px -6px rgba(201,162,39,0.75), 0 0 0 1px rgba(232,193,77,0.6) inset;
+  }
+  .brahmastra-btn:focus-visible{
+    outline: 2px solid var(--starlight);
+    outline-offset: 4px;
+  }
+  .brahmastra-btn::before{
+    content:'';
+    position:absolute;
+    top:0; left:-60%;
+    width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    animation: brahmastraShine 3.2s ease-in-out infinite;
+  }
+  @keyframes brahmastraShine{
+    0%{ left:-60%; }
+    35%, 100%{ left:130%; }
+  }
+  .brahmastra-btn .rb-emoji{
+    font-size: 20px;
+    display:inline-block;
+    animation: robotNod 2.4s ease-in-out infinite;
+  }
+  @keyframes robotNod{
+    0%, 100%{ transform: rotate(0deg); }
+    50%{ transform: rotate(-8deg); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .brahmastra-btn::before, .brahmastra-btn .rb-emoji{ animation: none; }
+  }
+
+  .brahmastra-wrap{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .brahmastra-mascot{
+    width: 70px;
+    height: auto;
+    position: absolute;
+    right: -30px;
+    top: -46px;
+    z-index: 2;
+    animation: robotSway 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+    transform-origin: bottom center;
+  }
+  @keyframes robotSway{
+    0%, 100%{ transform: rotate(-3deg); }
+    50%{ transform: rotate(3deg); }
+  }
+  .brahmastra-mascot .eye{
+    animation: robotBlink 3.4s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes robotBlink{
+    0%, 92%, 100%{ transform: scaleY(1); }
+    95%{ transform: scaleY(0.15); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .brahmastra-mascot, .brahmastra-mascot .eye{ animation: none; }
+  }
+  @media (max-width: 420px){
+    .brahmastra-mascot{ width: 54px; right: -18px; top: -36px; }
+  }
+
+  .cta-btn-secondary{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top: 18px;
+    max-width: 92vw;
+    padding: 14px 30px;
+    font-family:'Hind', sans-serif;
+    font-size: 16px;
+    font-weight:600;
+    color: var(--gold-bright);
+    background: rgba(18,61,44,0.55);
+    border: 1px solid rgba(201,162,39,0.5);
+    border-radius: 999px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+    text-align:center;
+    line-height:1.4;
+    backdrop-filter: blur(6px);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .cta-btn-secondary:hover{
+    transform: translateY(-2px);
+    border-color: var(--gold-bright);
+    background: rgba(18,61,44,0.8);
+  }
+  .cta-btn-secondary:focus-visible{
+    outline: 2px solid var(--starlight);
+    outline-offset: 4px;
+  }
+  .cta-btn-secondary .badge{
+    font-size: 10px;
+    font-weight:700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--bg-deep);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  /* ---------- Features ---------- */
+  .features{
+    position:relative;
+    z-index:2;
+    padding: 40px 24px 100px;
+  }
+
+  .features-grid{
+    max-width: 980px;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 760px){
+    .features-grid{ grid-template-columns: 1fr; }
+  }
+
+  .feature-card{
+    background: linear-gradient(160deg, rgba(18,61,44,0.55), rgba(15,46,34,0.55));
+    border: 1px solid rgba(201,162,39,0.22);
+    border-radius: 18px;
+    padding: 30px 26px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .feature-card:hover{
+    transform: translateY(-5px);
+    border-color: rgba(201,162,39,0.5);
+    box-shadow: 0 14px 32px -12px rgba(201,162,39,0.3);
+  }
+
+  .feature-glyph{
+    font-size: 30px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display:block;
+  }
+
+  .feature-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--gold-bright);
+  }
+
+  .feature-body{
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  /* ---------- Why The JeetResearch ---------- */
+  .why-section{
+    position:relative;
+    z-index:2;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 24px 20px;
+  }
+
+  .why-heading{
+    text-align:center;
+    font-family:'Yatra One', serif;
+    font-size: clamp(26px, 4vw, 36px);
+    color: var(--gold-bright);
+    margin-bottom: 12px;
+  }
+
+  .why-subheading{
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size: 17px;
+    color: var(--text-dim);
+    margin-bottom: 36px;
+  }
+
+  .why-list{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+
+  /* ---------- Meet Jeet — About Section ---------- */
+  .about-section{
+    position:relative;
+    z-index:2;
+    max-width: 800px;
+    margin: 60px auto 0;
+    padding: 0 24px 20px;
+  }
+  .about-card{
+    display:flex;
+    align-items:center;
+    gap: 30px;
+    background: linear-gradient(160deg, rgba(18,61,44,0.55), rgba(15,46,34,0.55));
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 22px;
+    padding: 34px 30px;
+  }
+  @media (max-width: 640px){
+    .about-card{ flex-direction:column; text-align:center; }
+  }
+  .about-photo{
+    flex-shrink:0;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--gold-bright), var(--gold));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 46px;
+    color: var(--bg-deep);
+    border: 3px solid rgba(232,193,77,0.6);
+    box-shadow: 0 0 30px -6px rgba(201,162,39,0.5);
+  }
+  .about-name{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 24px;
+    color: var(--gold-bright);
+    margin-bottom: 6px;
+  }
+  .about-title{
+    font-size: 12.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .about-body{
+    font-size: 14.5px;
+    color: var(--starlight);
+    line-height:1.7;
+  }
+
+  /* ---------- Market Wisdom Quote Banner ---------- */
+  .quote-banner{
+    position:relative;
+    z-index:2;
+    max-width: 720px;
+    margin: 50px auto 0;
+    padding: 0 24px;
+    text-align:center;
+  }
+  .quote-banner-inner{
+    background: linear-gradient(160deg, rgba(18,61,44,0.4), rgba(15,46,34,0.4));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 18px;
+    padding: 32px 28px;
+    position:relative;
+  }
+  .quote-mark{
+    font-family:'Yatra One', serif;
+    font-size: 44px;
+    color: var(--gold);
+    opacity:0.5;
+    line-height:0.5;
+    margin-bottom: 10px;
+    display:block;
+  }
+  .quote-text{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size: 21px;
+    color: var(--gold-bright);
+    line-height:1.5;
+  }
+
+  .why-item{
+    display:flex;
+    align-items:flex-start;
+    gap: 16px;
+    background: linear-gradient(160deg, rgba(18,61,44,0.5), rgba(15,46,34,0.5));
+    border: 1px solid rgba(201,162,39,0.22);
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .why-item:hover{
+    transform: translateY(-4px);
+    border-color: rgba(201,162,39,0.5);
+    box-shadow: 0 12px 30px -10px rgba(201,162,39,0.25);
+  }
+
+  .why-icon{
+    flex-shrink:0;
+    width: 38px;
+    height: 38px;
+    border-radius:50%;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 18px;
+  }
+
+  .why-text-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 18px;
+    color: var(--gold-bright);
+    margin-bottom: 4px;
+  }
+
+  .why-text-body{
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height:1.6;
+  }
+
+  /* ---------- Results / Proof Section ---------- */
+  .results-section{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 0 24px 20px;
+  }
+
+  .results-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+  }
+  @media (max-width: 760px){
+    .results-grid{ grid-template-columns: 1fr; }
+  }
+
+  .result-card{
+    position:relative;
+    background: linear-gradient(160deg, rgba(18,61,44,0.55), rgba(15,46,34,0.55));
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 16px;
+    padding: 26px 22px;
+    text-align:center;
+    overflow:hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .result-card:hover{
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(201,162,39,0.55);
+  }
+
+  .result-card::before{
+    content:'';
+    position:absolute;
+    top:-40%; left:-40%;
+    width:180%; height:180%;
+    background: radial-gradient(circle, rgba(201,162,39,0.08), transparent 60%);
+    pointer-events:none;
+  }
+
+  .result-instrument{
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .result-ratio{
+    font-family:'Yatra One', serif;
+    font-size: 34px;
+    color: var(--gold-bright);
+    margin-bottom: 6px;
+  }
+
+  .result-detail{
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height:1.5;
+  }
+
+  .results-disclaimer{
+    text-align:center;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    opacity:0.75;
+    font-style: italic;
+    margin-top: 24px;
+    max-width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ---------- Daily Advance Astrology View ---------- */
+  .advance-section{
+    position:relative;
+    z-index:2;
+    max-width: 700px;
+    margin: 60px auto 0;
+    padding: 0 24px 20px;
+  }
+
+  .advance-today-card{
+    background: linear-gradient(160deg, rgba(18,61,44,0.65), rgba(15,46,34,0.65));
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 20px;
+    padding: 28px 26px;
+    text-align:center;
+    box-shadow: 0 0 40px -10px rgba(201,162,39,0.3);
+  }
+
+  /* ---------- Today's Historical Astro-Bias Widget ---------- */
+  .bias-widget{
+    background: linear-gradient(160deg, rgba(18,61,44,0.5), rgba(15,46,34,0.5));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 18px;
+    padding: 20px 22px;
+    margin-top: 18px;
+    text-align:center;
+  }
+  .bias-widget-label{
+    font-size: 11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .bias-widget-day{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 20px;
+    color: var(--gold-bright);
+    margin-bottom: 10px;
+  }
+  .bias-widget-bar-track{
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    overflow:hidden;
+    margin-bottom: 8px;
+  }
+  .bias-widget-bar-fill{
+    height:100%;
+    border-radius:999px;
+    background: linear-gradient(90deg, #1a5c42, #34E176);
+  }
+  .bias-widget-pct{
+    font-size: 13px;
+    color: var(--starlight);
+    font-weight:600;
+  }
+  .bias-widget-note{
+    font-size: 10.5px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  .advance-monday-card{
+    background: linear-gradient(160deg, rgba(120,80,20,0.35), rgba(61,40,10,0.5));
+    border: 2px solid rgba(212,162,47,0.55);
+    border-radius: 20px;
+    padding: 24px 26px;
+    text-align:center;
+    margin-top: 18px;
+    box-shadow: 0 0 40px -10px rgba(212,162,47,0.35);
+    transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+  }
+  .advance-monday-card.sentiment-positive{
+    background: linear-gradient(160deg, rgba(20,100,60,0.35), rgba(10,50,30,0.5));
+    border-color: rgba(74,222,128,0.55);
+    box-shadow: 0 0 40px -10px rgba(74,222,128,0.35);
+  }
+  .advance-monday-card.sentiment-negative{
+    background: linear-gradient(160deg, rgba(139,20,40,0.35), rgba(61,10,20,0.5));
+    border-color: rgba(212,98,47,0.55);
+    box-shadow: 0 0 40px -10px rgba(212,98,47,0.35);
+  }
+  .advance-monday-label{
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffb347;
+    margin-bottom: 8px;
+    font-weight: 700;
+    transition: color 0.6s ease;
+  }
+  .advance-monday-card.sentiment-positive .advance-monday-label{ color: #4ADE80; }
+  .advance-monday-card.sentiment-negative .advance-monday-label{ color: #ff6b7d; }
+  .advance-monday-text{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 22px;
+    color: #ffcc80;
+    transition: filter 0.5s ease, color 0.6s ease;
+  }
+  .advance-monday-card.sentiment-positive .advance-monday-text{ color: #86efac; }
+  .advance-monday-card.sentiment-negative .advance-monday-text{ color: #ff8a95; }
+  .advance-monday-text.locked{
+    filter: blur(8px);
+    user-select: none;
+  }
+
+  .advance-date{
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .advance-view-text{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 26px;
+    color: var(--gold-bright);
+    line-height:1.4;
+    transition: filter 0.5s ease;
+  }
+
+  .advance-view-text.locked{
+    filter: blur(9px);
+    user-select: none;
+  }
+
+  .advance-unlock-wrap{
+    margin-top: 16px;
+  }
+
+  .advance-share-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    font-weight:700;
+    font-size: 14px;
+    border:none;
+    cursor:pointer;
+  }
+
+  .advance-share-row{
+    display:flex;
+    justify-content:center;
+    gap: 10px;
+    flex-wrap:wrap;
+    margin-bottom: 10px;
+  }
+
+  .advance-share-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border:none;
+    cursor:pointer;
+    font-size: 18px;
+    color: #fff;
+    transition: transform 0.2s ease;
+  }
+  .advance-share-icon:hover{ transform: translateY(-3px) scale(1.06); }
+  .share-whatsapp{ background: #25D366; }
+  .share-telegram{ background: #229ED9; }
+  .share-facebook{ background: #1877F2; }
+  .share-twitter{ background: #000000; }
+  .share-copy{ background: rgba(201,162,39,0.85); color: var(--bg-deep); }
+
+  .advance-unlock-note{
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-top: 10px;
+  }
+
+  .advance-verifying{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    padding: 14px;
+    font-size: 13.5px;
+    color: var(--gold-bright);
+    font-weight:600;
+  }
+  .advance-verifying.show{ display:flex; }
+
+  .advance-spinner{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(201,162,39,0.25);
+    border-top-color: var(--gold-bright);
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  .advance-success-check{
+    display:inline-flex;
+    align-items:center;
+    gap: 6px;
+    color: #4ADE80;
+    font-weight:700;
+    font-size: 13.5px;
+    opacity:0;
+    transition: opacity 0.4s ease;
+  }
+  .advance-success-check.show{ opacity:1; }
+
+  .advance-archive{
+    margin-top: 26px;
+  }
+
+  .advance-archive-list{
+    max-height: 232px;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    position: relative;
+  }
+  .advance-archive-list.open{
+    max-height: 900px;
+    overflow-y: auto;
+  }
+  .advance-archive-list::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0; height:56px;
+    background: linear-gradient(to bottom, rgba(7,26,20,0), rgba(7,26,20,.92));
+    pointer-events:none; transition: opacity .3s;
+  }
+  .advance-archive-list.open::after{ opacity:0; }
+
+  .advance-archive-toggle{
+    display:block; margin: 10px auto 0;
+    background: transparent;
+    border: 1px solid rgba(201,162,39,.32);
+    color: var(--gold, #c9a227);
+    padding: 7px 20px; border-radius: 999px;
+    font-size: 12.5px; font-family: inherit; cursor: pointer;
+    letter-spacing:.03em; transition: background .15s, color .15s;
+  }
+  .advance-archive-toggle:hover{
+    background: rgba(201,162,39,.12);
+  }
+  .advance-archive-toggle .arw{
+    display:inline-block; margin-left:6px; transition: transform .3s;
+  }
+  .advance-archive-toggle.open .arw{ transform: rotate(180deg); }
+
+  .advance-archive-title{
+    font-size: 13px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-align:center;
+  }
+
+  .advance-archive-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(31,26,74,0.35);
+    border: 1px solid rgba(201,162,39,0.18);
+    margin-bottom: 10px;
+    font-size: 13.5px;
+  }
+
+  .advance-archive-date{
+    color: var(--gold);
+    font-weight:600;
+    flex-shrink:0;
+    font-size:12.5px;
+  }
+
+  .advance-archive-text{
+    color: var(--starlight);
+    text-align:right;
+  }
+
+  .advance-result-tag{
+    display:inline-block;
+    margin-left:8px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight:700;
+  }
+  .advance-result-hit{
+    background: rgba(74,222,128,0.2);
+    color: #4ADE80;
+  }
+
+  /* ---------- Muhurat Calculator Tool ---------- */
+  .calc-section{
+    position:relative;
+    z-index:2;
+    max-width: 640px;
+    margin: 60px auto 0;
+    padding: 0 24px 20px;
+  }
+
+  .calc-card{
+    background: linear-gradient(160deg, rgba(18,61,44,0.6), rgba(15,46,34,0.6));
+    border: 1px solid rgba(201,162,39,0.32);
+    border-radius: 20px;
+    padding: 32px 28px;
+  }
+
+  .calc-field{
+    margin-bottom: 18px;
+  }
+
+  .calc-field label{
+    display:block;
+    font-size: 13px;
+    color: var(--gold-bright);
+    font-weight:600;
+    margin-bottom: 6px;
+  }
+
+  .calc-field input{
+    width:100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(201,162,39,0.4);
+    background: rgba(7,26,20,0.6);
+    color: var(--starlight);
+    font-size: 14px;
+    box-sizing:border-box;
+  }
+
+  .calc-btn{
+    width:100%;
+    padding: 14px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    font-weight:700;
+    font-size: 15px;
+    border:none;
+    cursor:pointer;
+    margin-top: 8px;
+  }
+
+  .calc-result{
+    display:none;
+    margin-top: 26px;
+    padding-top: 24px;
+    border-top: 1px dashed rgba(201,162,39,0.3);
+  }
+  .calc-result.show{ display:block; }
+
+  .calc-result-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201,162,39,0.12);
+  }
+  .calc-result-row:last-child{ border-bottom:none; }
+
+  .calc-result-label{
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+  .calc-result-value{
+    font-size: 14.5px;
+    color: var(--gold-bright);
+    font-weight:600;
+    text-align:right;
+  }
+
+  .calc-note{
+    margin-top: 18px;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    opacity:0.75;
+    font-style: italic;
+    text-align:center;
+  }
+
+  /* ---------- Trader's Toolkit ---------- */
+  .toolkit-section{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 0 24px 20px;
+  }
+
+  .toolkit-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  @media (max-width: 760px){
+    .toolkit-grid{ grid-template-columns: 1fr; }
+  }
+  .toolkit-grid .full-width{ grid-column: 1 / -1; }
+
+  .tool-card{
+    background: linear-gradient(160deg, rgba(18,61,44,0.55), rgba(15,46,34,0.55));
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 18px;
+    padding: 26px 24px;
+  }
+
+  .tool-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 19px;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+  }
+
+  .tool-status-live{
+    padding: 18px;
+    border-radius: 14px;
+    text-align:center;
+    font-weight:700;
+    font-size: 16px;
+  }
+  .tool-status-open{
+    background: rgba(74,222,128,0.15);
+    border: 1px solid rgba(74,222,128,0.5);
+    color: #4ADE80;
+  }
+  .tool-status-closed{
+    background: rgba(212,98,47,0.15);
+    border: 1px solid rgba(212,98,47,0.5);
+    color: #ff6b7d;
+  }
+  .tool-status-sub{
+    display:block;
+    font-size: 12px;
+    font-weight:400;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+
+  .tool-row{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap:wrap;
+  }
+  .tool-field{
+    flex:1;
+    min-width: 100px;
+  }
+  .tool-field label{
+    display:block;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+  }
+  .tool-field input{
+    width:100%;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(201,162,39,0.35);
+    background: rgba(7,26,20,0.6);
+    color: var(--starlight);
+    font-size: 13.5px;
+    box-sizing:border-box;
+  }
+
+  .tool-btn{
+    width:100%;
+    padding: 11px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    font-weight:700;
+    font-size: 13.5px;
+    border:none;
+    cursor:pointer;
+    margin-top: 4px;
+  }
+
+  .tool-output{
+    margin-top: 16px;
+    display:none;
+  }
+  .tool-output.show{ display:block; }
+
+  .tool-output-row{
+    display:flex;
+    justify-content:space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(201,162,39,0.12);
+    font-size: 13px;
+  }
+  .tool-output-row:last-child{ border-bottom:none; }
+  .tool-output-row span:first-child{ color: var(--text-dim); }
+  .tool-output-row span:last-child{ color: var(--gold-bright); font-weight:600; }
+
+  .pivot-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top: 14px;
+    font-size: 12.5px;
+    display:none;
+  }
+  .pivot-table.show{ display:table; }
+  .pivot-table td{
+    padding: 7px 8px;
+    border-bottom: 1px solid rgba(201,162,39,0.12);
+  }
+  .pivot-table td:first-child{ color: var(--text-dim); }
+  .pivot-table td:last-child{ color: var(--gold-bright); font-weight:600; text-align:right; }
+
+  /* ---------- Bottom CTA repeat ---------- */
+  .bottom-cta{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding: 20px 24px 110px;
+  }
+
+  .bottom-cta h2{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size: clamp(24px, 3.4vw, 34px);
+    color: var(--starlight);
+    margin-bottom: 30px;
+  }
+
+  footer{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding: 26px 24px 40px;
+    color: var(--text-dim);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border-top: 1px solid rgba(201,162,39,0.15);
+  }
+
+  /* ---------- Disclaimer ---------- */
+  .disclaimer{
+    position:relative;
+    z-index:2;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  .disclaimer-card{
+    background: linear-gradient(160deg, rgba(18,61,44,0.5), rgba(15,46,34,0.5));
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 16px;
+    padding: 28px 30px;
+    backdrop-filter: blur(6px);
+  }
+
+  .disclaimer-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 19px;
+    color: var(--gold-bright);
+    margin-bottom: 14px;
+  }
+
+  .disclaimer-text{
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--text-dim);
+  }
+
+  .disclaimer-text + .disclaimer-text{
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(201,162,39,0.2);
+  }
+
+  .disclaimer-text strong{
+    color: var(--starlight);
+    font-weight:600;
+  }
+  /* ---------- Live market ticker ---------- */
+  .market-pulse{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 10px;
+  }
+
+  .market-pulse-label{
+    text-align:center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    opacity:0.85;
+  }
+
+  .market-pulse-card{
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 14px;
+    overflow:hidden;
+    background: rgba(15,46,34,0.4);
+    backdrop-filter: blur(6px);
+  }
+
+  .market-pulse-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 720px){
+    .market-pulse-grid{ grid-template-columns: 1fr; }
+  }
+
+  .market-pulse-grid .market-pulse-card{
+    padding: 14px 14px 6px;
+    text-align:center;
+  }
+
+  .market-pulse-grid .market-pulse-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 16px;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .market-pulse-grid iframe{
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    display:block;
+    border-radius: 8px;
+  }
+
+  /* ---------- Live cosmic signals ---------- */
+  .cosmic-signals{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 24px 10px;
+  }
+
+  .signals-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 760px){
+    .signals-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px){
+    .signals-grid{ grid-template-columns: 1fr; }
+  }
+
+  .signal-card{
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 14px;
+    background: rgba(15,46,34,0.4);
+    backdrop-filter: blur(6px);
+    padding: 22px 20px;
+    text-align:center;
+  }
+
+  .signal-icon{
+    font-size: 36px;
+    margin-bottom: 10px;
+    display:block;
+  }
+
+  .signal-label{
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity:0.85;
+    margin-bottom: 8px;
+  }
+
+  .signal-value{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 22px;
+    color: var(--gold-bright);
+  }
+
+  .signal-sub{
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+
+  /* ---------- Cosmic Market Mood Meter ---------- */
+  .mood-meter{
+    margin-top: 18px;
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(18,61,44,0.6), rgba(15,46,34,0.6));
+    backdrop-filter: blur(6px);
+    padding: 26px 28px;
+    text-align:center;
+  }
+
+  .mood-label{
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity:0.85;
+    margin-bottom: 12px;
+  }
+
+  .mood-value{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .mood-reason{
+    font-size: 13px;
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto 10px;
+    line-height:1.6;
+  }
+
+  .mood-caveat{
+    font-size: 11px;
+    color: var(--text-dim);
+    opacity:0.7;
+    font-style: italic;
+  }
+
+  .mood-value.favorable{ color: #4ADE80; }
+  .mood-value.neutral{ color: var(--gold-bright); }
+  .mood-value.cautious{ color: var(--ember); }
+
+  /* ---------- Navagraha Positions ---------- */
+  .navagraha{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 0 24px 10px;
+  }
+
+  .navagraha-card{
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 16px;
+    background: rgba(15,46,34,0.4);
+    backdrop-filter: blur(6px);
+    padding: 10px 8px;
+    overflow-x:auto;
+  }
+
+  .navagraha-table{
+    width:100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 480px;
+  }
+
+  .navagraha-table th{
+    text-align:left;
+    padding: 10px 12px;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(201,162,39,0.25);
+  }
+
+  .navagraha-table td{
+    padding: 10px 12px;
+    color: var(--starlight);
+    border-bottom: 1px solid rgba(201,162,39,0.1);
+  }
+
+  .navagraha-table tr:last-child td{ border-bottom:none; }
+
+  .navagraha-table .graha-name{
+    font-weight:600;
+    color: var(--gold-bright);
+  }
+
+  .navagraha-note{
+    text-align:center;
+    font-size: 11px;
+    color: var(--text-dim);
+    opacity:0.75;
+    font-style: italic;
+    margin-top: 12px;
+  }
+
+  /* ---------- Countdown Timer ---------- */
+  .countdown-section{
+    position:relative;
+    z-index:2;
+    max-width: 640px;
+    margin: 30px auto 0;
+    padding: 0 24px;
+  }
+
+  .countdown-card{
+    border: 1px solid rgba(201,162,39,0.4);
+    border-radius: 20px;
+    background: linear-gradient(160deg, rgba(18,61,44,0.65), rgba(15,46,34,0.65));
+    padding: 32px 28px;
+    text-align:center;
+  }
+
+  .countdown-label{
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .countdown-planet{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 22px;
+    color: var(--gold-bright);
+    margin-bottom: 18px;
+  }
+
+  .countdown-timer{
+    display:flex;
+    justify-content:center;
+    gap: 14px;
+  }
+
+  .countdown-unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .countdown-num{
+    font-family:'Yatra One', serif;
+    font-size: clamp(32px, 8vw, 46px);
+    color: var(--starlight);
+    background: rgba(7,26,20,0.5);
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 12px;
+    padding: 10px 14px;
+    min-width: 68px;
+  }
+
+  .countdown-unit-label{
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 8px;
+  }
+
+  .countdown-sep{
+    font-family:'Yatra One', serif;
+    font-size: clamp(28px, 6vw, 40px);
+    color: var(--gold);
+    align-self:flex-start;
+    margin-top: 8px;
+  }
+
+  /* ---------- Hora Timeline ---------- */
+  .hora-section{
+    position:relative;
+    z-index:2;
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 0 24px 10px;
+  }
+
+  .hora-current{
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(18,61,44,0.6), rgba(15,46,34,0.6));
+    backdrop-filter: blur(6px);
+    padding: 22px 24px;
+    text-align:center;
+    margin-bottom: 16px;
+  }
+
+  .hora-current-label{
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity:0.85;
+    margin-bottom: 10px;
+  }
+
+  .hora-current-value{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 24px;
+    color: var(--gold-bright);
+    margin-bottom: 6px;
+  }
+
+  .hora-current-time{
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+
+  .hora-card{
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 16px;
+    background: rgba(15,46,34,0.4);
+    backdrop-filter: blur(6px);
+    padding: 10px 8px;
+    max-height: 320px;
+    overflow-y:auto;
+  }
+
+  .hora-table{
+    width:100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .hora-table th{
+    position: sticky;
+    top:0;
+    background: rgba(15,46,34,0.95);
+    text-align:left;
+    padding: 8px 12px;
+    color: var(--gold);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(201,162,39,0.25);
+  }
+
+  .hora-table td{
+    padding: 8px 12px;
+    color: var(--starlight);
+    border-bottom: 1px solid rgba(201,162,39,0.08);
+  }
+
+  .hora-table tr.current-hora td{
+    background: rgba(201,162,39,0.15);
+    font-weight:600;
+    color: var(--gold-bright);
+  }
+
+  /* ---------- Member count badge ---------- */
+  .member-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding: 9px 22px;
+    margin-bottom: 26px;
+    border-radius: 999px;
+    border: 1px solid rgba(201,162,39,0.4);
+    background: rgba(18,61,44,0.5);
+    backdrop-filter: blur(6px);
+    font-size: 13.5px;
+    font-weight:600;
+    color: var(--gold-bright);
+    letter-spacing: 0.02em;
+  }
+
+  .member-badge .dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:#4ADE80;
+    box-shadow: 0 0 8px 2px #4ADE80;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  .member-badge .count{
+    color: var(--starlight);
+    font-weight:700;
+  }
+  /* ---------- Disclaimer Gate Modal ---------- */
+  .gate-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(5,4,12,0.82);
+    backdrop-filter: blur(4px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding: 20px;
+  }
+  .gate-overlay.open{ display:flex; }
+
+  .gate-box{
+    max-width: 480px;
+    width:100%;
+    max-height: 85vh;
+    overflow-y:auto;
+    background: linear-gradient(160deg, rgba(18,61,44,0.98), rgba(15,46,34,0.98));
+    border: 1px solid rgba(201,162,39,0.4);
+    border-radius: 18px;
+    padding: 30px 28px;
+  }
+
+  .gate-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 20px;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+  }
+
+  .gate-text{
+    font-size: 13.5px;
+    line-height:1.75;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .gate-text strong{ color: var(--starlight); font-weight:600; }
+
+  .gate-checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin: 18px 0 22px;
+    font-size: 13px;
+    color: var(--starlight);
+  }
+  .gate-checkbox-row input{
+    margin-top: 3px;
+    width:16px; height:16px;
+    accent-color: var(--gold);
+    flex-shrink:0;
+  }
+
+  .gate-actions{
+    display:flex;
+    gap: 12px;
+    flex-wrap:wrap;
+  }
+
+  .gate-btn-accept, .gate-btn-cancel{
+    flex:1;
+    min-width: 120px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-family:'Hind', sans-serif;
+    font-size: 14px;
+    font-weight:600;
+    text-align:center;
+    cursor:pointer;
+    border: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .gate-btn-accept{
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    opacity: 0.5;
+    pointer-events:none;
+  }
+  .gate-btn-accept.enabled{
+    opacity: 1;
+    pointer-events:auto;
+  }
+  .gate-btn-accept.enabled:hover{ transform: translateY(-2px); }
+
+  .gate-btn-cancel{
+    background: transparent;
+    border: 1px solid rgba(201,162,39,0.4);
+    color: var(--text-dim);
+  }
+  .gate-btn-cancel:hover{ border-color: var(--gold-bright); color: var(--gold-bright); }
+
+  /* ---------- Strategy Access Flow Modal ---------- */
+  .strategy-step{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .strategy-step-num{
+    flex-shrink:0;
+    width:30px; height:30px;
+    border-radius:50%;
+    background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+    color: var(--bg-deep);
+    font-weight:700;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .strategy-step-text{
+    font-size:13.5px;
+    line-height:1.6;
+    color: var(--text-dim);
+    padding-top:4px;
+  }
+  .strategy-step-text strong{ color: var(--starlight); }
+  .strategy-demat-link{
+    display:inline-block;
+    margin-top:8px;
+    padding: 8px 18px;
+    border-radius:999px;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+    font-size:12.5px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .strategy-input{
+    width:100%;
+    padding: 12px 14px;
+    border-radius:10px;
+    border: 1px solid rgba(201,162,39,0.4);
+    background: rgba(7,26,20,0.6);
+    color: var(--starlight);
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:18px;
+    box-sizing:border-box;
+  }
+  .strategy-input::placeholder{ color: var(--text-dim); opacity:0.6; }
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The JeetResearch",
+  "url": "https://thejeetresearch.netlify.app/",
+  "description": "Financial Astrology meets Stock Market Analysis — Live Nifty & Bank Nifty insights, Vedic astrology tools, and a free trading community.",
+  "sameAs": [
+    "https://www.instagram.com/jeetreserach",
+    "https://www.youtube.com/@thejeetresearch"
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="scroll-progress-track">
+  <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
+</div>
+
+<div class="shake-toast" id="shake-toast">🪐 Cosmic energy detected! Join our community 👇</div>
+<button class="motion-enable-btn" id="motion-enable-btn" style="display:none;" onclick="enableMotionEffects()">🌀 Enable Motion</button>
+
+<a class="floating-whatsapp" href="https://whatsapp.com/channel/0029Vb93uHX4yltQIsPzl03D" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Channel" onclick="gtag('event', 'whatsapp_channel_click', {'button_location': 'floating'}); fbq('track', 'Lead', {content_name: 'whatsapp_channel'});">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1h.05a7.94 7.94 0 0 0 5.55-13.58zM12.05 18.53a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 12.24-3.51 6.56 6.56 0 0 1-6.65 6.6zm3.6-4.94c-.2-.1-1.17-.58-1.35-.64s-.32-.1-.45.1-.5.64-.62.78-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.99 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4s.2-.23.3-.35a1.4 1.4 0 0 0 .2-.33.37.37 0 0 0 0-.35c-.05-.1-.45-1.08-.62-1.48s-.33-.33-.45-.34h-.39a.75.75 0 0 0-.54.25 2.28 2.28 0 0 0-.71 1.7 3.96 3.96 0 0 0 .83 2.1 9.06 9.06 0 0 0 3.47 3.07c.48.21.86.33 1.15.42a2.77 2.77 0 0 0 1.28.08 2.1 2.1 0 0 0 1.37-.97 1.7 1.7 0 0 0 .12-.97c-.05-.09-.18-.14-.38-.24z"/></svg>
+</a>
+
+<div class="cosmos"></div>
+<div id="stars"></div>
+
+<div class="bg-scene">
+  <div class="bg-planet bp-1"></div>
+  <div class="bg-planet bp-2"></div>
+  <div class="bg-planet bp-3"><div class="bp-3-ring"></div></div>
+  <div class="bg-planet bp-4"></div>
+  <div class="bg-planet bp-5"></div>
+  <div class="bg-planet bp-6"></div>
+  <div class="bg-planet bp-7"></div>
+  <div class="bg-planet bp-8"></div>
+
+  <svg class="bg-chart bc-1" viewBox="0 0 110 60" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,45 15,38 30,42 45,20 60,26 75,10 90,16 110,4" fill="none" stroke="#4ADE80" stroke-width="2"/>
+    <rect x="12" y="32" width="6" height="14" fill="#4ADE80"/>
+    <rect x="42" y="14" width="6" height="14" fill="var(--ember)"/>
+    <rect x="72" y="6"  width="6" height="14" fill="#4ADE80"/>
+  </svg>
+
+  <svg class="bg-chart bc-2" viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,10 20,22 40,16 60,34 80,28 100,46 130,40" fill="none" stroke="var(--ember)" stroke-width="2"/>
+    <rect x="16" y="14" width="7" height="16" fill="var(--ember)"/>
+    <rect x="56" y="24" width="7" height="18" fill="#4ADE80"/>
+    <rect x="96" y="34" width="7" height="18" fill="var(--ember)"/>
+  </svg>
+
+  <svg class="bg-chart bc-3" viewBox="0 0 95 50" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,36 12,30 24,34 36,18 48,22 60,8 72,14 95,2" fill="none" stroke="var(--gold-bright)" stroke-width="2"/>
+    <rect x="10" y="26" width="5" height="12" fill="#4ADE80"/>
+    <rect x="34" y="12" width="5" height="12" fill="var(--ember)"/>
+    <rect x="58" y="4"  width="5" height="12" fill="#4ADE80"/>
+  </svg>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Astrology × Stock Market Analysis</div>
+    <h1 class="brand display">The JeetResearch</h1>
+    <p class="subhead">Decode market moves through the movement of the planets — where celestial signs meet chart data, delivered straight to your Telegram</p>
+
+    <div class="orrery">
+      <div class="planet-orbit o1"><div class="planet p-gold"></div></div>
+      <div class="planet-orbit o2"><div class="planet p-ember"></div></div>
+      <div class="planet-orbit o3"><div class="planet p-purple"></div></div>
+      <div class="planet-orbit o4"><div class="p-ring"></div></div>
+      <div class="planet-orbit o5"><div class="planet p-green"></div></div>
+      <div class="core-glow"></div>
+      <svg viewBox="0 0 420 420">
+        <circle cx="210" cy="210" r="190" fill="none" stroke="rgba(201,162,39,0.25)" stroke-width="1"/>
+        <g class="ring-rotate-rev">
+          <circle cx="210" cy="210" r="140" fill="none" stroke="rgba(26,92,66,0.4)" stroke-width="1" stroke-dasharray="2 6"/>
+        </g>
+        <!-- rotating ring of chart/candlestick glyphs filling the center -->
+        <g class="chart-ring-rotate">
+          <g transform="translate(210,210)">
+            <g transform="rotate(0) translate(0,-88)"><rect x="-3" y="-13" width="6" height="20" rx="2" fill="#4ADE80"/><line x1="0" y1="-18" x2="0" y2="9" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(30) translate(0,-88)"><rect x="-3" y="-9" width="6" height="14" rx="2" fill="var(--ember)"/><line x1="0" y1="-13" x2="0" y2="7" stroke="var(--ember)" stroke-width="1.4"/></g>
+            <g transform="rotate(60) translate(0,-88)"><rect x="-3" y="-15" width="6" height="24" rx="2" fill="#4ADE80"/><line x1="0" y1="-20" x2="0" y2="11" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(90) translate(0,-88)"><rect x="-3" y="-8" width="6" height="12" rx="2" fill="var(--ember)"/><line x1="0" y1="-11" x2="0" y2="6" stroke="var(--ember)" stroke-width="1.4"/></g>
+            <g transform="rotate(120) translate(0,-88)"><rect x="-3" y="-12" width="6" height="18" rx="2" fill="#4ADE80"/><line x1="0" y1="-16" x2="0" y2="8" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(150) translate(0,-88)"><rect x="-3" y="-10" width="6" height="16" rx="2" fill="var(--ember)"/><line x1="0" y1="-14" x2="0" y2="8" stroke="var(--ember)" stroke-width="1.4"/></g>
+            <g transform="rotate(180) translate(0,-88)"><rect x="-3" y="-14" width="6" height="22" rx="2" fill="#4ADE80"/><line x1="0" y1="-19" x2="0" y2="10" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(210) translate(0,-88)"><rect x="-3" y="-9" width="6" height="13" rx="2" fill="var(--ember)"/><line x1="0" y1="-12" x2="0" y2="6" stroke="var(--ember)" stroke-width="1.4"/></g>
+            <g transform="rotate(240) translate(0,-88)"><rect x="-3" y="-13" width="6" height="20" rx="2" fill="#4ADE80"/><line x1="0" y1="-18" x2="0" y2="9" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(270) translate(0,-88)"><rect x="-3" y="-8" width="6" height="12" rx="2" fill="var(--ember)"/><line x1="0" y1="-11" x2="0" y2="6" stroke="var(--ember)" stroke-width="1.4"/></g>
+            <g transform="rotate(300) translate(0,-88)"><rect x="-3" y="-16" width="6" height="26" rx="2" fill="#4ADE80"/><line x1="0" y1="-21" x2="0" y2="12" stroke="#4ADE80" stroke-width="1.4"/></g>
+            <g transform="rotate(330) translate(0,-88)"><rect x="-3" y="-10" width="6" height="15" rx="2" fill="var(--ember)"/><line x1="0" y1="-14" x2="0" y2="7" stroke="var(--ember)" stroke-width="1.4"/></g>
+          </g>
+        </g>
+
+        <!-- inner steady candlestick trend line at the very core -->
+        <g transform="translate(150,195)" stroke="none">
+          <polyline points="0,42 20,30 40,36 60,14 80,20 100,4 120,10" fill="none" stroke="var(--gold-bright)" stroke-width="2"/>
+          <rect x="0"  y="30" width="7" height="20" fill="#4ADE80"/>
+          <rect x="20" y="18" width="7" height="20" fill="var(--ember)"/>
+          <rect x="40" y="24" width="7" height="20" fill="#4ADE80"/>
+          <rect x="60" y="2"  width="7" height="20" fill="#4ADE80"/>
+          <rect x="80" y="8"  width="7" height="20" fill="var(--ember)"/>
+          <rect x="100" y="-8" width="7" height="20" fill="#4ADE80"/>
+        </g>
+        <circle cx="210" cy="210" r="6" fill="var(--gold-bright)"/>
+      </svg>
+    </div>
+
+    <div class="member-badge">
+      <span class="dot"></span>
+      <span class="count" id="member-count">0</span> <span>Members Already Joined</span>
+    </div>
+
+    <div class="cta-live-wrap">
+    <a class="cta-btn" id="cta-hero" href="https://t.me/+_YzBLPEIoiM0ZTI1" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'telegram_join_click', {'button_location': 'hero'}); fbq('track', 'Lead', {content_name: 'telegram_join_hero'});">
+      🔮 Join our free Telegram community
+    </a>
+    </div>
+    <div class="cta-sub">Free daily astro-market insights • Tap the button to join the group instantly</div>
+
+    <div class="cta-live-wrap cta-live-wrap-wa" style="margin-top:18px;">
+    <a class="cta-btn cta-btn-whatsapp" href="https://whatsapp.com/channel/0029Vb93uHX4yltQIsPzl03D" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'whatsapp_channel_click', {'button_location': 'hero'}); fbq('track', 'Lead', {content_name: 'whatsapp_channel_hero'});">
+      💬 Join our WhatsApp Channel
+    </a>
+    </div>
+    <div class="cta-sub">Get daily updates straight on WhatsApp</div>
+
+    <a class="cta-btn-secondary gate-btn" href="#" onclick="event.preventDefault(); document.getElementById('brahmastra-overlay').classList.add('open');" data-ga-event="brahmastra_robot_click" data-ga-location="hero" data-fbq-content="brahmastra_robot" style="background:linear-gradient(135deg, rgba(232,193,77,0.18), rgba(201,162,39,0.28)); border:1px solid rgba(232,193,77,0.55);">
+      🤖 Join Our Brahmastra Robot
+    </a>
+    <div class="cta-sub">Confluence Score, SBC वेध, ब्रह्म-रिवर्सल — सब कुछ एक Telegram group में</div>
+
+    <a class="cta-btn-secondary" href="https://signup.jainam.in?FUtF+AcVfSsOkRcB9QgZQH9nH+JOhGopFHdXk4osIx0=" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'demat_signup_click', {'button_location': 'hero'}); fbq('track', 'Lead', {content_name: 'demat_signup'});">
+      📂 OPEN A FREE DEMAT ACCOUNT
+    </a>
+
+    <a class="cta-btn-secondary gate-btn" href="https://onespace.bio/api/share/telegram/744a9338-b60d-4445-b9ff-84f50a918f32" target="_blank" rel="noopener noreferrer" data-ga-event="market_rahasya_click" data-ga-location="hero" data-fbq-content="market_rahasya">
+      🪐 मार्केट रहस्य समूह ( Premium Access Only ) 🪐
+    </a>
+
+    <a class="cta-btn-secondary" href="#" id="strategy-gate-btn" onclick="event.preventDefault(); document.getElementById('strategy-overlay').classList.add('open');" data-ga-event="trend_strategy_click" data-ga-location="hero" data-fbq-content="trend_strategy">
+      📈 Trend Is Your Friend Strategy 📉 ( Life Time Access )
+    </a>
+  </header>
+
+<section class="advance-section" style="text-align:center; margin-bottom: 26px;">
+    <div class="cta-live-wrap">
+      <div class="brahmastra-wrap">
+        <a class="brahmastra-btn gate-btn" href="#" id="brahmastra-gate-btn" onclick="event.preventDefault(); document.getElementById('brahmastra-overlay').classList.add('open');" data-ga-event="brahmastra_robot_section_click" data-ga-location="robot_section" data-fbq-content="brahmastra_robot">
+          Join ब्रह्मास्त्र रोबोट
+        </a>
+        <svg class="brahmastra-mascot" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- antenna -->
+          <line x1="50" y1="8" x2="50" y2="18" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="50" cy="6" r="4.5" fill="#e8c14d"/>
+          <!-- head -->
+          <rect x="24" y="18" width="52" height="40" rx="14" fill="#123d2c" stroke="#e8c14d" stroke-width="2.5"/>
+          <ellipse class="eye" cx="38" cy="38" rx="5.5" ry="7" fill="#7dd3fc"/>
+          <ellipse class="eye" cx="62" cy="38" rx="5.5" ry="7" fill="#7dd3fc"/>
+          <path d="M40 50 Q50 56 60 50" stroke="#e8c14d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- body -->
+          <rect x="30" y="60" width="40" height="38" rx="10" fill="#0f2e22" stroke="#e8c14d" stroke-width="2.5"/>
+          <circle cx="50" cy="79" r="7" fill="none" stroke="#c9a227" stroke-width="2.5"/>
+          <circle cx="50" cy="79" r="2.5" fill="#e8c14d"/>
+          <!-- legs -->
+          <rect x="34" y="98" width="10" height="16" rx="4" fill="#123d2c" stroke="#e8c14d" stroke-width="2"/>
+          <rect x="56" y="98" width="10" height="16" rx="4" fill="#123d2c" stroke="#e8c14d" stroke-width="2"/>
+          <!-- right arm reaching down onto the button -->
+          <path d="M68 66 Q90 78 88 112" stroke="#123d2c" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M68 66 Q90 78 88 112" stroke="#e8c14d" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="88" cy="115" r="7" fill="#123d2c" stroke="#e8c14d" stroke-width="2.5"/>
+          <!-- left arm -->
+          <path d="M32 66 Q18 76 22 90" stroke="#123d2c" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M32 66 Q18 76 22 90" stroke="#e8c14d" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="22" cy="92" r="6" fill="#123d2c" stroke="#e8c14d" stroke-width="2.5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="cta-sub">भारत का पहला AI + ज्योतिष ट्रेडिंग रोबोट • जन्माष्टमी ऑफ़र चालू है</div>
+  </section>
+
+<section class="advance-section">
+    <div class="why-heading" style="text-align:center;">✦ Daily Advance Astrology View ✦</div>
+    <div class="why-subheading" style="text-align:center;">Tomorrow's market direction, called today — before it happens</div>
+
+    <div class="advance-today-card">
+      <div class="advance-date">Today — 8 September 2026</div>
+      <div class="advance-view-text locked" id="today-view-text" data-real-text="&quot;Volatile to Negative&quot;">"● ● ● ● ● ● ● ●"</div>
+      <div class="advance-unlock-wrap" id="today-unlock-wrap">
+        <div class="advance-share-row">
+          <button class="advance-share-icon share-whatsapp" onclick="shareAndUnlock('whatsapp','today-view-text','today-unlock-wrap')" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1h.05a7.94 7.94 0 0 0 5.55-13.58zM12.05 18.53a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 12.24-3.51 6.56 6.56 0 0 1-6.65 6.6zm3.6-4.94c-.2-.1-1.17-.58-1.35-.64s-.32-.1-.45.1-.5.64-.62.78-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.99 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4s.2-.23.3-.35a1.4 1.4 0 0 0 .2-.33.37.37 0 0 0 0-.35c-.05-.1-.45-1.08-.62-1.48s-.33-.33-.45-.34h-.39a.75.75 0 0 0-.54.25 2.28 2.28 0 0 0-.71 1.7 3.96 3.96 0 0 0 .83 2.1 9.06 9.06 0 0 0 3.47 3.07c.48.21.86.33 1.15.42a2.77 2.77 0 0 0 1.28.08 2.1 2.1 0 0 0 1.37-.97 1.7 1.7 0 0 0 .12-.97c-.05-.09-.18-.14-.38-.24z"/></svg></button>
+          <button class="advance-share-icon share-telegram" onclick="shareAndUnlock('telegram','today-view-text','today-unlock-wrap')" aria-label="Share on Telegram"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M21.5 4.5 2.7 11.8c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.9.9.9.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.7l3-14.2c.3-1.2-.4-1.7-1.4-1.3zM8.6 14.3l9-5.7c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.1z"/></svg></button>
+          <button class="advance-share-icon share-facebook" onclick="shareAndUnlock('facebook','today-view-text','today-unlock-wrap')" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></button>
+          <button class="advance-share-icon share-twitter" onclick="shareAndUnlock('twitter','today-view-text','today-unlock-wrap')" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M18.9 2.4h3.1l-6.9 7.9L23.3 21.6h-6.4l-5-6.5-5.7 6.5H2.9l7.4-8.4L2 2.4h6.6l4.5 6 5.8-6zm-1.1 17.2h1.7L7.3 4.2H5.5l12.3 15.4z"/></svg></button>
+        </div>
+        <div class="advance-unlock-note">Share on any platform to instantly unlock today's advance view</div>
+        <div class="advance-verifying" id="today-verifying"><span class="advance-spinner"></span> Verifying share...</div>
+      </div>
+    </div>
+
+    <div class="advance-archive">
+      <div class="advance-archive-title">Recent Advance Views</div>
+
+      <div class="advance-archive-list" id="advArchiveList">
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">9 Aug</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">10 Aug</span>
+        <span class="advance-archive-text">Day Low to Day High<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">11 Aug</span>
+        <span class="advance-archive-text">Volatile to Positive<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">12 Aug</span>
+        <span class="advance-archive-text">Volatile to Both Side<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">13 Aug</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">14 Aug</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">17 Aug</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">18 Aug</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">19 Aug</span>
+        <span class="advance-archive-text">Volatile to Both Side<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">25 Aug</span>
+        <span class="advance-archive-text">Volatile to Positive<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">26 Aug</span>
+        <span class="advance-archive-text">Volatile to Positive<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">31 Aug</span>
+        <span class="advance-archive-text">Volatile to Both Side<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">1 Sep</span>
+        <span class="advance-archive-text">Volatile to Both Side<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">2 Sep</span>
+        <span class="advance-archive-text">Volatile to Negative — Nifty −0.99%<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">4 Sep</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">7 Sep</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      <div class="advance-archive-item">
+        <span class="advance-archive-date">8 Sep</span>
+        <span class="advance-archive-text">Volatile to Negative<span class="advance-result-tag advance-result-hit">✓ Matched</span></span>
+      </div>
+      </div>
+
+      <button class="advance-archive-toggle" id="advArchiveBtn" type="button"
+        onclick="toggleAdvArchive()">और देखें <span class="arw">▾</span></button>
+    </div>
+    <div class="bias-widget">
+      <div class="bias-widget-label">📊 Today's Historical Astro-Bias</div>
+      <div class="bias-widget-day" id="bias-day-name">Loading...</div>
+      <div class="bias-widget-bar-track"><div class="bias-widget-bar-fill" id="bias-bar-fill" style="width:0%"></div></div>
+      <div class="bias-widget-pct" id="bias-pct-text"></div>
+      <div class="bias-widget-note">Based on 1,646 Nifty 50 trading days (2020–2026)</div>
+    </div>
+
+    <div class="results-disclaimer">These are educational astrological observations, not guaranteed predictions. Market movement depends on many real-world factors. Not financial or investment advice.</div>
+  </section>
+
+<section class="cosmic-signals">
+    <div class="market-pulse-label">✦ Live Cosmic Signals ✦</div>
+    <div class="signals-grid">
+      <div class="signal-card">
+        <span class="signal-icon" id="moon-icon">🌙</span>
+        <div class="signal-label">Aaj ka Chandra Chakra</div>
+        <div class="signal-value" id="moon-phase-name">Loading…</div>
+        <div class="signal-sub" id="moon-illumination"></div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon" id="day-icon">☉</span>
+        <div class="signal-label">Aaj ka Din &amp; Grah Swami</div>
+        <div class="signal-value" id="day-planet-name">Loading…</div>
+        <div class="signal-sub" id="day-name"></div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon" id="numero-icon">🔢</span>
+        <div class="signal-label">Aaj ka Numerology Number</div>
+        <div class="signal-value" id="numero-number">Loading…</div>
+        <div class="signal-sub" id="numero-meaning"></div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon">✧</span>
+        <div class="signal-label">Aaj ka Nakshatra</div>
+        <div class="signal-value" id="nakshatra-name">Loading…</div>
+        <div class="signal-sub" id="nakshatra-lord"></div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon">🌗</span>
+        <div class="signal-label">Aaj ki Tithi</div>
+        <div class="signal-value" id="tithi-name">Loading…</div>
+        <div class="signal-sub" id="tithi-paksha"></div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon">⏳</span>
+        <div class="signal-label">Aaj ka Rahu Kaal</div>
+        <div class="signal-value" id="rahukaal-time">Loading…</div>
+        <div class="signal-sub">Avoid starting new ventures during this window</div>
+      </div>
+    </div>
+
+    <div class="mood-meter">
+      <div class="mood-label">✦ Today's Cosmic Market Mood ✦</div>
+      <div class="mood-value" id="mood-value">Loading…</div>
+      <div class="mood-reason" id="mood-reason"></div>
+      <div class="mood-caveat">Based on Moon phase, weekday planetary lord &amp; numerology — for educational reflection only, not a trading signal.</div>
+    </div>
+
+    <div class="mood-meter" style="margin-top:18px;">
+      <div class="mood-label">✦ Tomorrow's Cosmic Outlook (Advance Preview) ✦</div>
+      <div class="mood-value" id="tomorrow-mood-value">Loading…</div>
+      <div class="mood-reason" id="tomorrow-mood-reason"></div>
+      <div class="mood-caveat">A one-day-ahead preview of tomorrow's Moon phase, planetary lord &amp; numerology — for planning your reading, not a market forecast.</div>
+    </div>
+  </section>
+
+<section class="navagraha">
+    <div class="market-pulse-label">✦ Navagraha Positions (Right Now) ✦</div>
+    <div class="navagraha-card">
+      <table class="navagraha-table">
+        <thead>
+          <tr><th>Graha</th><th>Rashi (Sign)</th><th>Rashi Swami (Lord)</th><th>Degree</th></tr>
+        </thead>
+        <tbody id="navagraha-tbody">
+          <tr><td colspan="4">Calculating positions…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="navagraha-note">Sidereal (Lahiri) positions, approximate — calculated with simplified orbital formulas for educational purposes.</div>
+  </section>
+
+<section class="countdown-section">
+    <div class="countdown-card">
+      <div class="countdown-label">✦ Next Favorable Hora ✦</div>
+      <div class="countdown-planet" id="countdown-planet">Calculating…</div>
+      <div class="countdown-timer">
+        <div class="countdown-unit">
+          <div class="countdown-num" id="cd-hours">00</div>
+          <div class="countdown-unit-label">Hours</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <div class="countdown-num" id="cd-minutes">00</div>
+          <div class="countdown-unit-label">Minutes</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <div class="countdown-num" id="cd-seconds">00</div>
+          <div class="countdown-unit-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="hora-section">
+    <div class="market-pulse-label">✦ Today's Hora Timeline (Planetary Hours) ✦</div>
+    <div class="hora-current">
+      <div class="hora-current-label">Current Hora</div>
+      <div class="hora-current-value" id="current-hora-planet">Loading…</div>
+      <div class="hora-current-time" id="current-hora-time"></div>
+    </div>
+    <div class="hora-card">
+      <table class="hora-table">
+        <thead>
+          <tr><th>Time</th><th>Ruling Planet (Hora)</th></tr>
+        </thead>
+        <tbody id="hora-tbody">
+          <tr><td colspan="2">Calculating today's Hora timeline…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="navagraha-note">Traditional planetary hours (Hora), approximated using ~6 AM–6 PM day/night split for India. Some financial astrologers study Hora alongside price action — this is educational, not a trading signal.</div>
+  </section>
+
+<section class="about-section">
+    <div class="why-heading" style="text-align:center;">✦ About The Founder ✦</div>
+    <div class="about-card">
+      <div class="about-photo">🪐</div>
+      <div>
+        <div class="about-name">Jeet</div>
+        <div class="about-title">Founder, The JeetResearch</div>
+        <div class="about-body">
+          I started The JeetResearch because I saw two worlds that never spoke to each other — the ancient discipline of Vedic astrology, and the modern world of stock markets. I combine both to give you a perspective you won't find anywhere else — Moon phases, planetary transits, and numerology, read alongside real market data. Everything here is shared transparently, with results and misses both on display, because I believe genuine value builds trust better than promises ever could.
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="why-section">
+    <div class="why-heading">Why The JeetResearch?</div>
+    <div class="why-subheading">Where the stars meet the charts — here's what makes us different</div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-icon">🪐</div>
+        <div>
+          <div class="why-text-title">Astrology + Market, Fused Together</div>
+          <div class="why-text-body">Not just charts, not just stars — we blend financial astrology with real market data for a perspective you won't find elsewhere.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📡</div>
+        <div>
+          <div class="why-text-title">Live Cosmic + Market Tools</div>
+          <div class="why-text-body">Live Nifty/Bank Nifty charts, Moon phase, Grah Swami, Navagraha positions, and Hora timeline — all in one place, updated in real time.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">👥</div>
+        <div>
+          <div class="why-text-title">A Growing, Engaged Community</div>
+          <div class="why-text-body">8,230+ members already learning and discussing together — share your thoughts, learn from others, grow with the community.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🛡️</div>
+        <div>
+          <div class="why-text-title">Transparent, No False Promises</div>
+          <div class="why-text-body">We're upfront about what this is — educational content grounded in astrology, not guaranteed returns. Always consult a SEBI-registered advisor before trading.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">✦</div>
+        <div>
+          <div class="why-text-title">Free + Premium Learning Paths</div>
+          <div class="why-text-body">Start free with our community, and go deeper with premium groups like Market Rahasya and Trend Is Your Friend Strategy when you're ready.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-glyph">☾</span>
+        <div class="feature-title">Planetary Transit Analysis</div>
+        <div class="feature-body">Learn how planetary movements and transits connect to market behavior — explained in plain, easy-to-follow terms.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-glyph">✧</span>
+        <div class="feature-title">Daily Astro Updates</div>
+        <div class="feature-body">A short daily read on how planetary positions may shape market sentiment, delivered right to the group.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-glyph">☉</span>
+        <div class="feature-title">Learning Community</div>
+        <div class="feature-body">Join a community of people curious about both astrology and the markets, and learn together.</div>
+      </div>
+    </div>
+  </section>
+
+<section class="calc-section">
+    <div class="why-heading" style="text-align:center;">✦ Your Personal Trading Muhurat ✦</div>
+    <div class="why-subheading" style="text-align:center;">Enter your birth date to discover your Moon Rashi, Numerology Number &amp; favorable trading day</div>
+    <div class="calc-card">
+      <div class="calc-field">
+        <label for="calc-dob">Your Date of Birth</label>
+        <input type="date" id="calc-dob">
+      </div>
+      <button class="calc-btn" onclick="calculateMuhurat()">🔮 Reveal My Cosmic Trading Profile</button>
+
+      <div class="calc-result" id="calc-result">
+        <div class="calc-result-row">
+          <span class="calc-result-label">Your Moon Rashi</span>
+          <span class="calc-result-value" id="calc-rashi">—</span>
+        </div>
+        <div class="calc-result-row">
+          <span class="calc-result-label">Rashi Lord</span>
+          <span class="calc-result-value" id="calc-lord">—</span>
+        </div>
+        <div class="calc-result-row">
+          <span class="calc-result-label">Numerology Number</span>
+          <span class="calc-result-value" id="calc-numerology">—</span>
+        </div>
+        <div class="calc-result-row">
+          <span class="calc-result-label">Your Favorable Weekday</span>
+          <span class="calc-result-value" id="calc-day">—</span>
+        </div>
+      </div>
+      <div class="calc-note">Based on Moon sign calculation &amp; numerology. For educational/reflective purposes only — not financial advice.</div>
+    </div>
+  </section>
+
+<section class="toolkit-section">
+    <div class="why-heading" style="text-align:center;">✦ Trader's Toolkit ✦</div>
+    <div class="why-subheading" style="text-align:center;">Practical tools every trader needs, free to use</div>
+
+    <div class="toolkit-grid">
+      <!-- Market Status -->
+      <div class="tool-card full-width">
+        <div class="tool-title">🕐 NSE Market Status</div>
+        <div class="tool-status-live" id="market-status-box">
+          Checking…
+        </div>
+      </div>
+
+      <!-- Risk & Position Size Calculator -->
+      <div class="tool-card">
+        <div class="tool-title">⚖️ Risk &amp; Position Size Calculator</div>
+        <div class="tool-row">
+          <div class="tool-field">
+            <label>Capital (₹)</label>
+            <input type="number" id="risk-capital" placeholder="100000">
+          </div>
+          <div class="tool-field">
+            <label>Risk %</label>
+            <input type="number" id="risk-percent" placeholder="2">
+          </div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-field">
+            <label>Entry Price</label>
+            <input type="number" id="risk-entry" placeholder="1200">
+          </div>
+          <div class="tool-field">
+            <label>Stop-Loss Price</label>
+            <input type="number" id="risk-sl" placeholder="1180">
+          </div>
+        </div>
+        <button class="tool-btn" onclick="calculateRisk()">Calculate</button>
+        <div class="tool-output" id="risk-output">
+          <div class="tool-output-row"><span>Max Risk Amount</span><span id="risk-amount">—</span></div>
+          <div class="tool-output-row"><span>Risk Per Share</span><span id="risk-per-share">—</span></div>
+          <div class="tool-output-row"><span>Position Size (Qty)</span><span id="risk-qty">—</span></div>
+        </div>
+      </div>
+
+      <!-- Pivot Point Calculator -->
+      <div class="tool-card">
+        <div class="tool-title">📊 Pivot Point (CPR) Calculator</div>
+        <div class="tool-row">
+          <div class="tool-field">
+            <label>Yesterday's High</label>
+            <input type="number" id="pivot-high" placeholder="24650">
+          </div>
+          <div class="tool-field">
+            <label>Yesterday's Low</label>
+            <input type="number" id="pivot-low" placeholder="24500">
+          </div>
+        </div>
+        <div class="tool-row">
+          <div class="tool-field">
+            <label>Yesterday's Close</label>
+            <input type="number" id="pivot-close" placeholder="24580">
+          </div>
+        </div>
+        <button class="tool-btn" onclick="calculatePivot()">Calculate</button>
+        <table class="pivot-table" id="pivot-output">
+          <tr><td>R3</td><td id="pv-r3">—</td></tr>
+          <tr><td>R2</td><td id="pv-r2">—</td></tr>
+          <tr><td>R1</td><td id="pv-r1">—</td></tr>
+          <tr><td>Pivot</td><td id="pv-p">—</td></tr>
+          <tr><td>S1</td><td id="pv-s1">—</td></tr>
+          <tr><td>S2</td><td id="pv-s2">—</td></tr>
+          <tr><td>S3</td><td id="pv-s3">—</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="calc-note">Tools provided for educational calculation purposes only — not trading recommendations.</div>
+  </section>
+
+<section class="bottom-cta">
+    <h2>🪐 अभ्यास को समय दो , अभ्यास आपका समय बदल देगा 🪐</h2>
+    <a class="cta-btn" id="cta-bottom" href="https://t.me/+_YzBLPEIoiM0ZTI1" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'telegram_join_click', {'button_location': 'bottom'}); fbq('track', 'Lead', {content_name: 'telegram_join_bottom'});">
+      🔮 Join on Telegram Now
+    </a>
+  </section>
+
+<section class="disclaimer">
+    <div class="disclaimer-card">
+      <div class="disclaimer-title">⚠️ Disclaimer</div>
+      <p class="disclaimer-text">This group is created purely for <strong>educational and learning purposes</strong>. All views shared here are based on financial astrology and are not to be treated as financial or investment advice. Neither the group nor its admins will be responsible for any profit or loss arising from decisions made based on this content. <strong>Please consult your SEBI-registered advisor before making any trading or investment decisions.</strong> I am not a SEBI-registered advisor.</p>
+      <p class="disclaimer-text">हमारा जो भी व्यू यहाँ शेयर किया जाता है, वो ज़्यादातर <strong>ज्योतिष (एस्ट्रोलॉजी) आधारित</strong> होता है और इसे निवेश सलाह नहीं माना जाना चाहिए। कृपया कोई भी ट्रेड या निवेश करने से पहले अपने <strong>SEBI-रजिस्टर्ड एडवाइजर</strong> से सलाह ज़रूर लें।</p>
+    </div>
+  </section>
+
+<footer>
+    THE JEETRESEARCH &nbsp;•&nbsp; For educational purposes only, not investment advice
+    <br><br>
+    © 2026 The JeetResearch. All rights reserved. Unauthorized copying or reproduction of this website's content, design, or code is prohibited.
+    <br><br>
+    <a href="privacy-policy.html" style="color: var(--gold-bright); text-decoration:none;">Privacy Policy</a>
+  </footer>
+
+
+
+</div>
+
+<script>
+  // Swap Telegram link based on traffic source (?ref=family shows the family/friends link,
+  // otherwise the ads-tracking link is used by default)
+  const ADS_LINK = "https://t.me/+_YzBLPEIoiM0ZTI1";
+  const FAMILY_LINK = "https://t.me/+oFEgfTK-6_AzMzhl";
+
+  const params = new URLSearchParams(window.location.search);
+  const isFamily = params.get('ref') === 'family';
+  const targetLink = isFamily ? FAMILY_LINK : ADS_LINK;
+
+  document.getElementById('cta-hero').href = targetLink;
+  document.getElementById('cta-bottom').href = targetLink;
+</script>
+
+<script>
+  // ===== Member count-up animation =====
+  // TO UPDATE THE MEMBER COUNT: just change the number below
+  (function(){
+    function toggleAdvArchive(){
+      var l = document.getElementById('advArchiveList');
+      var b = document.getElementById('advArchiveBtn');
+      if(!l || !b) return;
+      var open = l.classList.toggle('open');
+      b.classList.toggle('open', open);
+      b.innerHTML = (open ? 'कम दिखाएँ' : 'और देखें') + ' <span class="arw">▾</span>';
+      if(!open) l.scrollTop = 0;
+    }
+
+    const TARGET_COUNT = 8230;
+    const el = document.getElementById('member-count');
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function formatNum(n){ return Math.round(n).toLocaleString('en-IN'); }
+
+    function tick(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatNum(eased * TARGET_COUNT) + (progress >= 1 ? '+' : '');
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+</script>
+
+<script>
+  // ===== Live Cosmic Signals: Moon Phase + Day's Ruling Planet =====
+  (function(){
+    // Moon phase calculation (astronomical, no API needed)
+    const synodicMonth = 29.530588853;
+    const knownNewMoon = Date.UTC(2000, 0, 6, 18, 14, 0); // a known new moon reference
+    const now = new Date();
+    const diffDays = (now.getTime() - knownNewMoon) / 86400000;
+    let phase = (diffDays % synodicMonth) / synodicMonth;
+    if (phase < 0) phase += 1;
+
+    const illumination = Math.round((1 - Math.cos(phase * 2 * Math.PI)) / 2 * 100);
+
+    let moonName, moonEmoji;
+    if (phase < 0.03 || phase >= 0.97) { moonName = "Amavasya (New Moon)"; moonEmoji = "🌑"; }
+    else if (phase < 0.22) { moonName = "Waxing Crescent"; moonEmoji = "🌒"; }
+    else if (phase < 0.28) { moonName = "Shukla Ashtami (First Quarter)"; moonEmoji = "🌓"; }
+    else if (phase < 0.47) { moonName = "Waxing Gibbous"; moonEmoji = "🌔"; }
+    else if (phase < 0.53) { moonName = "Purnima (Full Moon)"; moonEmoji = "🌕"; }
+    else if (phase < 0.72) { moonName = "Waning Gibbous"; moonEmoji = "🌖"; }
+    else if (phase < 0.78) { moonName = "Krishna Ashtami (Last Quarter)"; moonEmoji = "🌗"; }
+    else { moonName = "Waning Crescent"; moonEmoji = "🌘"; }
+
+    document.getElementById('moon-icon').textContent = moonEmoji;
+    document.getElementById('moon-phase-name').textContent = moonName;
+    document.getElementById('moon-illumination').textContent = illumination + "% illuminated";
+
+    // Day's ruling planet (Vedic weekday lords)
+    const dayLords = [
+      { day: "Sunday",    hindi: "रविवार",   planet: "Surya (Sun)",       emoji: "☉" },
+      { day: "Monday",    hindi: "सोमवार",   planet: "Chandra (Moon)",    emoji: "☽" },
+      { day: "Tuesday",   hindi: "मंगलवार", planet: "Mangal (Mars)",     emoji: "♂" },
+      { day: "Wednesday", hindi: "बुधवार",   planet: "Budh (Mercury)",    emoji: "☿" },
+      { day: "Thursday",  hindi: "गुरुवार",  planet: "Guru (Jupiter)",    emoji: "♃" },
+      { day: "Friday",    hindi: "शुक्रवार", planet: "Shukra (Venus)",    emoji: "♀" },
+      { day: "Saturday",  hindi: "शनिवार",   planet: "Shani (Saturn)",    emoji: "♄" }
+    ];
+    const today = dayLords[now.getDay()];
+    document.getElementById('day-icon').textContent = today.emoji;
+    document.getElementById('day-planet-name').textContent = today.planet;
+    document.getElementById('day-name').textContent = today.day + " • " + today.hindi;
+
+    // Universal Day Number (numerology) — reduce today's date digits to a single digit,
+    // preserving master numbers 11, 22, 33
+    function reduceNumber(n){
+      while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
+        n = String(n).split('').reduce((a, d) => a + parseInt(d, 10), 0);
+      }
+      return n;
+    }
+    const d = now.getDate(), m = now.getMonth() + 1, y = now.getFullYear();
+    const dateDigitSum = String(d).split('').reduce((a,x)=>a+parseInt(x,10),0)
+                       + String(m).split('').reduce((a,x)=>a+parseInt(x,10),0)
+                       + String(y).split('').reduce((a,x)=>a+parseInt(x,10),0);
+    const universalDayNumber = reduceNumber(dateDigitSum);
+
+    const numeroMeanings = {
+      1: "New beginnings, bold moves — leadership energy",
+      2: "Patience & partnerships — wait for confirmation",
+      3: "Growth & expansion — positive momentum",
+      4: "Stability & discipline — avoid impulsive trades",
+      5: "Volatility likely — stay alert to sudden change",
+      6: "Balance & harmony — favorable for long-term holds",
+      7: "Analysis & research — avoid rushing decisions",
+      8: "Strong financial energy — power & wealth focus",
+      9: "Completion — good day to review your portfolio",
+      11: "Heightened intuition — trust your instincts",
+      22: "Master builder — big financial decisions favorable",
+      33: "Master teacher — share knowledge, community focus"
+    };
+
+    document.getElementById('numero-number').textContent = universalDayNumber;
+    document.getElementById('numero-meaning').textContent = numeroMeanings[universalDayNumber] || "";
+
+    // ===== Cosmic Market Mood Meter (combines moon phase + day lord + numerology) =====
+    let score = 0;
+    const reasons = [];
+
+    // Moon phase contribution
+    if (phase < 0.5) { score += 1; reasons.push("waxing moon (growth bias)"); }
+    else { score -= 1; reasons.push("waning moon (cautious bias)"); }
+
+    // Day lord contribution
+    const dayWeights = { 0:0, 1:0, 2:-1, 3:1, 4:1, 5:1, 6:-1 }; // Sun,Mon,Tue,Wed,Thu,Fri,Sat
+    score += dayWeights[now.getDay()];
+    reasons.push(today.planet + "'s day");
+
+    // Numerology contribution
+    const positiveNums = [1,3,6,8,22];
+    const cautiousNums = [2,5,11];
+    if (positiveNums.includes(universalDayNumber)) { score += 1; reasons.push("favorable numerology"); }
+    else if (cautiousNums.includes(universalDayNumber)) { score -= 1; reasons.push("volatile numerology"); }
+    else { reasons.push("neutral numerology"); }
+
+    const moodEl = document.getElementById('mood-value');
+    const reasonEl = document.getElementById('mood-reason');
+
+    if (score >= 2) {
+      moodEl.textContent = "🟢 Favorable Cosmic Alignment";
+      moodEl.className = "mood-value favorable";
+    } else if (score <= -2) {
+      moodEl.textContent = "🔴 Cautious — Volatility Possible";
+      moodEl.className = "mood-value cautious";
+    } else {
+      moodEl.textContent = "🟡 Neutral — Mixed Signals";
+      moodEl.className = "mood-value neutral";
+    }
+    reasonEl.textContent = "Today's reading: " + reasons.join(", ") + ".";
+  })();
+</script>
+
+<script>
+  // ===== Tomorrow's Cosmic Outlook (same method, computed for tomorrow's date) =====
+  (function(){
+    const synodicMonth = 29.530588853;
+    const knownNewMoon = Date.UTC(2000, 0, 6, 18, 14, 0);
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const diffDays = (tomorrow.getTime() - knownNewMoon) / 86400000;
+    let phase = (diffDays % synodicMonth) / synodicMonth;
+    if (phase < 0) phase += 1;
+
+    const dayLords = [
+      { day: "Sunday",    planet: "Surya (Sun)" },
+      { day: "Monday",    planet: "Chandra (Moon)" },
+      { day: "Tuesday",   planet: "Mangal (Mars)" },
+      { day: "Wednesday", planet: "Budh (Mercury)" },
+      { day: "Thursday",  planet: "Guru (Jupiter)" },
+      { day: "Friday",    planet: "Shukra (Venus)" },
+      { day: "Saturday",  planet: "Shani (Saturn)" }
+    ];
+    const tomorrowLord = dayLords[tomorrow.getDay()];
+
+    function reduceNumber(n){
+      while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
+        n = String(n).split('').reduce((a, d) => a + parseInt(d, 10), 0);
+      }
+      return n;
+    }
+    const d = tomorrow.getDate(), m = tomorrow.getMonth() + 1, y = tomorrow.getFullYear();
+    const dateDigitSum = String(d).split('').reduce((a,x)=>a+parseInt(x,10),0)
+                       + String(m).split('').reduce((a,x)=>a+parseInt(x,10),0)
+                       + String(y).split('').reduce((a,x)=>a+parseInt(x,10),0);
+    const universalDayNumber = reduceNumber(dateDigitSum);
+
+    let score = 0;
+    const reasons = [];
+    if (phase < 0.5) { score += 1; reasons.push("waxing moon"); }
+    else { score -= 1; reasons.push("waning moon"); }
+
+    const dayWeights = { 0:0, 1:0, 2:-1, 3:1, 4:1, 5:1, 6:-1 };
+    score += dayWeights[tomorrow.getDay()];
+    reasons.push(tomorrowLord.planet + "'s day");
+
+    const positiveNums = [1,3,6,8,22];
+    const cautiousNums = [2,5,11];
+    if (positiveNums.includes(universalDayNumber)) { score += 1; reasons.push("favorable numerology"); }
+    else if (cautiousNums.includes(universalDayNumber)) { score -= 1; reasons.push("volatile numerology"); }
+    else { reasons.push("neutral numerology"); }
+
+    const moodEl = document.getElementById('tomorrow-mood-value');
+    const reasonEl = document.getElementById('tomorrow-mood-reason');
+
+    if (score >= 2) {
+      moodEl.textContent = "🟢 Favorable Cosmic Alignment";
+      moodEl.className = "mood-value favorable";
+    } else if (score <= -2) {
+      moodEl.textContent = "🔴 Cautious — Volatility Possible";
+      moodEl.className = "mood-value cautious";
+    } else {
+      moodEl.textContent = "🟡 Neutral — Mixed Signals";
+      moodEl.className = "mood-value neutral";
+    }
+    const tomorrowDateStr = tomorrow.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long' });
+    reasonEl.textContent = tomorrowDateStr + ": " + reasons.join(", ") + ".";
+  })();
+</script>
+
+<script>
+  // ===== Navagraha Positions — simplified Keplerian orbital mechanics (no API needed) =====
+  // Approximate low-precision method (based on standard mean orbital elements), converted
+  // to sidereal (Lahiri ayanamsa) positions for Vedic Rashi/degree display.
+  (function(){
+    const rad = Math.PI / 180;
+    const sind = x => Math.sin(x * rad);
+    const cosd = x => Math.cos(x * rad);
+    const atan2d = (y, x) => Math.atan2(y, x) / rad;
+    const rev = x => { let r = x - 360 * Math.floor(x / 360); return r < 0 ? r + 360 : r; };
+
+    const now = new Date();
+    const y = now.getUTCFullYear(), m = now.getUTCMonth() + 1, D = now.getUTCDate();
+    const UT = now.getUTCHours() + now.getUTCMinutes()/60 + now.getUTCSeconds()/3600;
+    const d = 367*y - Math.floor(7*(y + Math.floor((m+9)/12))/4) + Math.floor(275*m/9) + D - 730530 + UT/24;
+
+    const elements = {
+      Sun:     { N:0,                              i:0,                     w:282.9404+4.70935e-5*d,  a:1,        e:0.016709-1.151e-9*d,  M:356.0470+0.9856002585*d },
+      Moon:    { N:125.1228-0.0529538083*d,         i:5.1454,                w:318.0634+0.1643573223*d,a:60.2666,  e:0.054900,             M:115.3654+13.0649929509*d },
+      Mercury: { N:48.3313+3.24587e-5*d,            i:7.0047+5.00e-8*d,      w:29.1241+1.01444e-5*d,  a:0.387098, e:0.205635+5.59e-10*d,  M:168.6562+4.0923344368*d },
+      Venus:   { N:76.6799+2.46590e-5*d,            i:3.3946+2.75e-8*d,      w:54.8910+1.38374e-5*d,  a:0.723330, e:0.006773-1.302e-9*d,  M:48.0052+1.6021302244*d },
+      Mars:    { N:49.5574+2.11081e-5*d,            i:1.8497-1.78e-8*d,      w:286.5016+2.92961e-5*d, a:1.523688, e:0.093405+2.516e-9*d,  M:18.6021+0.5240207766*d },
+      Jupiter: { N:100.4542+2.76854e-5*d,           i:1.3030-1.557e-7*d,     w:273.8777+1.64505e-5*d, a:5.20256,  e:0.048498+4.469e-9*d,  M:19.8950+0.0830853001*d },
+      Saturn:  { N:113.6634+2.38980e-5*d,           i:2.4886-1.081e-7*d,     w:339.3939+2.97661e-5*d, a:9.55475,  e:0.055546-9.499e-9*d,  M:316.9670+0.0334442282*d }
+    };
+    for (const k in elements) { elements[k].M = rev(elements[k].M); elements[k].N = rev(elements[k].N); elements[k].w = rev(elements[k].w); }
+
+    function solveKepler(M, e){
+      let E = M + e*(180/Math.PI)*sind(M)*(1 + e*cosd(M));
+      for (let it=0; it<5; it++){
+        const dM = M - (E - e*(180/Math.PI)*sind(E));
+        const dE = dM / (1 - e*cosd(E));
+        E += dE;
+      }
+      return E;
+    }
+
+    function helio(elem){
+      const { N, i, w, a, e, M } = elem;
+      const E = solveKepler(M, e);
+      const xv = a*(cosd(E) - e);
+      const yv = a*(Math.sqrt(1-e*e)*sind(E));
+      const v = atan2d(yv, xv);
+      const r = Math.sqrt(xv*xv + yv*yv);
+      const xh = r*(cosd(N)*cosd(v+w) - sind(N)*sind(v+w)*cosd(i));
+      const yh = r*(sind(N)*cosd(v+w) + cosd(N)*sind(v+w)*cosd(i));
+      return { xh, yh };
+    }
+
+    // Sun's geocentric ecliptic longitude
+    const sunE = solveKepler(elements.Sun.M, elements.Sun.e);
+    const xvSun = elements.Sun.a*(cosd(sunE) - elements.Sun.e);
+    const yvSun = elements.Sun.a*(Math.sqrt(1-elements.Sun.e*elements.Sun.e)*sind(sunE));
+    const vSun = atan2d(yvSun, xvSun);
+    const rSun = Math.sqrt(xvSun*xvSun + yvSun*yvSun);
+    const lonSun = rev(vSun + elements.Sun.w);
+    const xsSun = rSun*cosd(lonSun);
+    const ysSun = rSun*sind(lonSun);
+
+    const tropical = {};
+    tropical['Surya (Sun)'] = lonSun;
+
+    const moonH = helio(elements.Moon);
+    tropical['Chandra (Moon)'] = rev(atan2d(moonH.yh, moonH.xh));
+
+    const planetMap = { Mercury:'Budh (Mercury)', Venus:'Shukra (Venus)', Mars:'Mangal (Mars)', Jupiter:'Guru (Jupiter)', Saturn:'Shani (Saturn)' };
+    for (const key in planetMap){
+      const h = helio(elements[key]);
+      const xg = h.xh + xsSun, yg = h.yh + ysSun;
+      tropical[planetMap[key]] = rev(atan2d(yg, xg));
+    }
+
+    tropical['Rahu'] = rev(elements.Moon.N);
+    tropical['Ketu'] = rev(elements.Moon.N + 180);
+
+    // Lahiri ayanamsa approximation (precession ~50.29"/year)
+    const yearFrac = y + (m - 1)/12;
+    const ayanamsa = 23.85 + 0.013972 * (yearFrac - 2000);
+
+    const rashis = [
+      { name:'Mesh (Aries)',       lord:'Mangal' },
+      { name:'Vrishabh (Taurus)',  lord:'Shukra' },
+      { name:'Mithun (Gemini)',    lord:'Budh' },
+      { name:'Kark (Cancer)',      lord:'Chandra' },
+      { name:'Simha (Leo)',        lord:'Surya' },
+      { name:'Kanya (Virgo)',      lord:'Budh' },
+      { name:'Tula (Libra)',       lord:'Shukra' },
+      { name:'Vrishchik (Scorpio)',lord:'Mangal' },
+      { name:'Dhanu (Sagittarius)',lord:'Guru' },
+      { name:'Makar (Capricorn)',  lord:'Shani' },
+      { name:'Kumbh (Aquarius)',   lord:'Shani' },
+      { name:'Meen (Pisces)',      lord:'Guru' }
+    ];
+
+    const grahaOrder = ['Surya (Sun)','Chandra (Moon)','Mangal (Mars)','Budh (Mercury)','Guru (Jupiter)','Shukra (Venus)','Shani (Saturn)','Rahu','Ketu'];
+
+    let rows = '';
+    grahaOrder.forEach(name => {
+      const sidereal = rev(tropical[name] - ayanamsa);
+      const rashiIndex = Math.floor(sidereal / 30);
+      const degreeInSign = (sidereal % 30).toFixed(2);
+      const rashi = rashis[rashiIndex];
+      rows += `<tr><td class="graha-name">${name}</td><td>${rashi.name}</td><td>${rashi.lord}</td><td>${degreeInSign}°</td></tr>`;
+    });
+
+    document.getElementById('navagraha-tbody').innerHTML = rows;
+
+    // ===== Nakshatra (Moon's sidereal position / 13°20') =====
+    const nakshatraNames = [
+      "Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha",
+      "Magha","Purva Phalguni","Uttara Phalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha",
+      "Mula","Purva Ashadha","Uttara Ashadha","Shravana","Dhanishta","Shatabhisha","Purva Bhadrapada","Uttara Bhadrapada","Revati"
+    ];
+    const nakshatraLords = [
+      "Ketu","Shukra","Surya","Chandra","Mangal","Rahu","Guru","Shani","Budh",
+      "Ketu","Shukra","Surya","Chandra","Mangal","Rahu","Guru","Shani","Budh",
+      "Ketu","Shukra","Surya","Chandra","Mangal","Rahu","Guru","Shani","Budh"
+    ];
+    const moonSidereal = rev(tropical['Chandra (Moon)'] - ayanamsa);
+    const nakshatraIndex = Math.floor(moonSidereal / (360/27));
+    document.getElementById('nakshatra-name').textContent = nakshatraNames[nakshatraIndex];
+    document.getElementById('nakshatra-lord').textContent = "Ruling planet: " + nakshatraLords[nakshatraIndex];
+
+    // ===== Tithi (angle between Moon and Sun / 12°) =====
+    const tithiNames = [
+      "Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami",
+      "Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima/Amavasya"
+    ];
+    const moonSunDiff = rev(tropical['Chandra (Moon)'] - lonSun);
+    const paksha = moonSunDiff < 180 ? "Shukla Paksha (Waxing)" : "Krishna Paksha (Waning)";
+    const tithiIndexInPaksha = Math.floor((moonSunDiff % 180) / 12);
+    document.getElementById('tithi-name').textContent = tithiNames[tithiIndexInPaksha];
+    document.getElementById('tithi-paksha').textContent = paksha;
+
+    // ===== Rahu Kaal (approximate, ~6 AM-6 PM day split into 8 parts, weekday-specific segment) =====
+    const rahuKaalSegment = [7, 1, 6, 4, 5, 3, 2]; // segment index (0-7) for Sun..Sat
+    const seg = rahuKaalSegment[now.getDay()];
+    const segLength = (18 - 6) / 8; // 1.5 hours
+    const rkStart = 6 + seg * segLength;
+    const rkEnd = rkStart + segLength;
+    function fmtRK(h){
+      let hh = Math.floor(h), mm = Math.round((h % 1) * 60);
+      const period = hh >= 12 ? 'PM' : 'AM';
+      let dh = hh % 12; if (dh === 0) dh = 12;
+      return dh + ':' + String(mm).padStart(2,'0') + ' ' + period;
+    }
+    document.getElementById('rahukaal-time').textContent = fmtRK(rkStart) + ' – ' + fmtRK(rkEnd);
+  })();
+</script>
+
+<script>
+  // ===== Today's Hora Timeline (traditional planetary hours) =====
+  // Approximated using a fixed ~6 AM sunrise / 6 PM sunset split (reasonable for India,
+  // varies seasonally by up to ~1 hour). Educational/traditional content, not a trading signal.
+  (function(){
+    const now = new Date();
+
+    // Chaldean order used for Hora sequencing (repeats continuously)
+    const cycle = ['Shani (Saturn)','Guru (Jupiter)','Mangal (Mars)','Surya (Sun)','Shukra (Venus)','Budh (Mercury)','Chandra (Moon)'];
+    // Index of each weekday's own ruling planet within the cycle above
+    const dayLordCycleIndex = [3, 6, 2, 5, 1, 4, 0]; // Sun, Mon, Tue, Wed, Thu, Fri, Sat
+
+    const sunrise = 6;  // 6:00 AM
+    const sunset = 18;  // 6:00 PM
+    const dayHoraLength = (sunset - sunrise) / 12;   // hours per day-hora
+    const nightHoraLength = (24 - (sunset - sunrise)) / 12; // hours per night-hora
+
+    function buildDayHoras(weekday, baseDate){
+      const startIdx = dayLordCycleIndex[weekday];
+      const horas = [];
+      // 12 day horas (sunrise -> sunset)
+      for (let i = 0; i < 12; i++){
+        const startHour = sunrise + i * dayHoraLength;
+        const endHour = sunrise + (i+1) * dayHoraLength;
+        horas.push({ planet: cycle[(startIdx + i) % 7], startHour, endHour });
+      }
+      // 12 night horas (sunset -> next sunrise)
+      for (let i = 0; i < 12; i++){
+        const startHour = sunset + i * nightHoraLength;
+        const endHour = sunset + (i+1) * nightHoraLength;
+        horas.push({ planet: cycle[(startIdx + 12 + i) % 7], startHour, endHour });
+      }
+      return horas;
+    }
+
+    function formatHour(h){
+      let hh = Math.floor(h % 24);
+      let mm = Math.round((h % 1) * 60);
+      if (mm === 60) { mm = 0; hh += 1; }
+      const period = hh >= 12 ? 'PM' : 'AM';
+      let displayHour = hh % 12;
+      if (displayHour === 0) displayHour = 12;
+      return displayHour + ':' + String(mm).padStart(2,'0') + ' ' + period;
+    }
+
+    const weekday = now.getDay();
+    const horas = buildDayHoras(weekday);
+    const nowHourFraction = now.getHours() + now.getMinutes()/60;
+
+    let rows = '';
+    let current = null;
+    horas.forEach(h => {
+      const isCurrent = nowHourFraction >= h.startHour && nowHourFraction < h.endHour;
+      if (isCurrent) current = h;
+      rows += `<tr class="${isCurrent ? 'current-hora' : ''}"><td>${formatHour(h.startHour)} – ${formatHour(h.endHour)}</td><td>${h.planet}</td></tr>`;
+    });
+
+    document.getElementById('hora-tbody').innerHTML = rows;
+    if (current){
+      document.getElementById('current-hora-planet').textContent = current.planet + " Hora";
+      document.getElementById('current-hora-time').textContent = formatHour(current.startHour) + ' – ' + formatHour(current.endHour) + ' (approx., India)';
+    }
+  })();
+</script>
+
+<script>
+  // ===== Public Muhurat Calculator =====
+  function calculateMuhurat(){
+    const dobInput = document.getElementById('calc-dob').value;
+    if (!dobInput) { alert('Please select your date of birth.'); return; }
+
+    const [yy, mm, dd] = dobInput.split('-').map(Number);
+
+    const rad = Math.PI/180;
+    const sind = x => Math.sin(x*rad);
+    const cosd = x => Math.cos(x*rad);
+    const atan2d = (y,x) => Math.atan2(y,x)/rad;
+    const rev = x => { let r = x % 360; return r < 0 ? r+360 : r; };
+    function solveKepler(M, e){
+      let E = M + e*(180/Math.PI)*sind(M)*(1+e*cosd(M));
+      for (let i=0;i<5;i++){
+        const dM = M - (E - e*(180/Math.PI)*sind(E));
+        E += dM/(1-e*cosd(E));
+      }
+      return E;
+    }
+
+    const UT = 12; // noon default (no birth time collected)
+    const d = 367*yy - Math.floor(7*(yy+Math.floor((mm+9)/12))/4) + Math.floor(275*mm/9) + dd - 730530 + UT/24;
+
+    const N = rev(125.1228-0.0529538083*d), i = 5.1454, w = rev(318.0634+0.1643573223*d);
+    const a = 60.2666, e = 0.054900, M = rev(115.3654+13.0649929509*d);
+    const E = solveKepler(M, e);
+    const xv = a*(cosd(E)-e), yv = a*(Math.sqrt(1-e*e)*sind(E));
+    const v = atan2d(yv, xv);
+    const xh = (Math.sqrt(xv*xv+yv*yv))*(cosd(N)*cosd(v+w) - sind(N)*sind(v+w)*cosd(i));
+    const yh = (Math.sqrt(xv*xv+yv*yv))*(sind(N)*cosd(v+w) + cosd(N)*sind(v+w)*cosd(i));
+    const moonTropical = rev(atan2d(yh, xh));
+
+    const yearFrac = yy + (mm-1)/12;
+    const ayanamsa = 23.85 + 0.013972*(yearFrac-2000);
+    const moonSidereal = rev(moonTropical - ayanamsa);
+
+    const rashis = [
+      {name:'Mesh (Aries)', lord:'Mangal', day:'Tuesday'},
+      {name:'Vrishabh (Taurus)', lord:'Shukra', day:'Friday'},
+      {name:'Mithun (Gemini)', lord:'Budh', day:'Wednesday'},
+      {name:'Kark (Cancer)', lord:'Chandra', day:'Monday'},
+      {name:'Simha (Leo)', lord:'Surya', day:'Sunday'},
+      {name:'Kanya (Virgo)', lord:'Budh', day:'Wednesday'},
+      {name:'Tula (Libra)', lord:'Shukra', day:'Friday'},
+      {name:'Vrishchik (Scorpio)', lord:'Mangal', day:'Tuesday'},
+      {name:'Dhanu (Sagittarius)', lord:'Guru', day:'Thursday'},
+      {name:'Makar (Capricorn)', lord:'Shani', day:'Saturday'},
+      {name:'Kumbh (Aquarius)', lord:'Shani', day:'Saturday'},
+      {name:'Meen (Pisces)', lord:'Guru', day:'Thursday'}
+    ];
+    const rashiIndex = Math.floor(moonSidereal/30);
+    const rashi = rashis[rashiIndex];
+
+    // Numerology (Life Path Number from full DOB)
+    function digitSum(n){ return String(n).split('').reduce((a,x)=>a+parseInt(x,10),0); }
+    function reduceNum(n){
+      while (n > 9 && n !== 11 && n !== 22 && n !== 33) n = digitSum(n);
+      return n;
+    }
+    const lifePath = reduceNum(digitSum(dd) + digitSum(mm) + digitSum(yy));
+
+    document.getElementById('calc-rashi').textContent = rashi.name;
+    document.getElementById('calc-lord').textContent = rashi.lord;
+    document.getElementById('calc-numerology').textContent = lifePath;
+    document.getElementById('calc-day').textContent = rashi.day;
+    document.getElementById('calc-result').classList.add('show');
+
+    if (typeof gtag === 'function') gtag('event', 'muhurat_calculator_used');
+  }
+</script>
+
+<script>
+  // ===== Trader's Toolkit: Market Status, Risk Calculator, Pivot Calculator =====
+
+  // ---- 1. Live NSE Market Status ----
+  function updateMarketStatus(){
+    const now = new Date();
+    // Convert to IST (UTC+5:30) regardless of visitor's local timezone
+    const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const ist = new Date(utcMs + (5.5 * 60 * 60000));
+
+    const day = ist.getDay(); // 0=Sun..6=Sat
+    const hours = ist.getHours();
+    const minutes = ist.getMinutes();
+    const minutesNow = hours * 60 + minutes;
+    const marketOpen = 9 * 60 + 15;   // 9:15 AM
+    const marketClose = 15 * 60 + 30; // 3:30 PM
+
+    const isWeekday = day >= 1 && day <= 5;
+    const isOpen = isWeekday && minutesNow >= marketOpen && minutesNow < marketClose;
+
+    const box = document.getElementById('market-status-box');
+    if (!box) return;
+
+    const timeStr = ist.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+
+    if (isOpen){
+      box.className = 'tool-status-live tool-status-open';
+      box.innerHTML = '🟢 MARKET IS OPEN<span class="tool-status-sub">IST ' + timeStr + ' • Closes at 3:30 PM</span>';
+    } else {
+      box.className = 'tool-status-live tool-status-closed';
+      let reason = !isWeekday ? 'Weekend' : (minutesNow < marketOpen ? 'Opens at 9:15 AM' : 'Closed for the day');
+      box.innerHTML = '🔴 MARKET IS CLOSED<span class="tool-status-sub">IST ' + timeStr + ' • ' + reason + '</span>';
+    }
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+
+  // ---- 2. Risk & Position Size Calculator ----
+  function calculateRisk(){
+    const capital = parseFloat(document.getElementById('risk-capital').value);
+    const riskPct = parseFloat(document.getElementById('risk-percent').value);
+    const entry = parseFloat(document.getElementById('risk-entry').value);
+    const sl = parseFloat(document.getElementById('risk-sl').value);
+
+    if (!capital || !riskPct || !entry || !sl || entry === sl){
+      alert('Please fill all fields with valid numbers (entry and stop-loss must differ).');
+      return;
+    }
+
+    const maxRiskAmount = capital * (riskPct / 100);
+    const riskPerShare = Math.abs(entry - sl);
+    const qty = Math.floor(maxRiskAmount / riskPerShare);
+
+    document.getElementById('risk-amount').textContent = '₹' + maxRiskAmount.toLocaleString('en-IN', {maximumFractionDigits: 2});
+    document.getElementById('risk-per-share').textContent = '₹' + riskPerShare.toLocaleString('en-IN', {maximumFractionDigits: 2});
+    document.getElementById('risk-qty').textContent = qty.toLocaleString('en-IN') + ' shares';
+    document.getElementById('risk-output').classList.add('show');
+
+    if (typeof gtag === 'function') gtag('event', 'risk_calculator_used');
+  }
+
+  // ---- 3. Pivot Point (CPR) Calculator ----
+  function calculatePivot(){
+    const high = parseFloat(document.getElementById('pivot-high').value);
+    const low = parseFloat(document.getElementById('pivot-low').value);
+    const close = parseFloat(document.getElementById('pivot-close').value);
+
+    if (!high || !low || !close){
+      alert('Please fill High, Low, and Close values.');
+      return;
+    }
+
+    const pivot = (high + low + close) / 3;
+    const r1 = 2*pivot - low;
+    const s1 = 2*pivot - high;
+    const r2 = pivot + (high - low);
+    const s2 = pivot - (high - low);
+    const r3 = high + 2*(pivot - low);
+    const s3 = low - 2*(high - pivot);
+
+    const fmt = n => n.toLocaleString('en-IN', {maximumFractionDigits: 2});
+
+    document.getElementById('pv-r3').textContent = fmt(r3);
+    document.getElementById('pv-r2').textContent = fmt(r2);
+    document.getElementById('pv-r1').textContent = fmt(r1);
+    document.getElementById('pv-p').textContent = fmt(pivot);
+    document.getElementById('pv-s1').textContent = fmt(s1);
+    document.getElementById('pv-s2').textContent = fmt(s2);
+    document.getElementById('pv-s3').textContent = fmt(s3);
+    document.getElementById('pivot-output').classList.add('show');
+
+    if (typeof gtag === 'function') gtag('event', 'pivot_calculator_used');
+  }
+</script>
+
+<script>
+  // ===== Next Favorable Hora Countdown =====
+  (function(){
+    const cycle = ['Shani (Saturn)','Guru (Jupiter)','Mangal (Mars)','Surya (Sun)','Shukra (Venus)','Budh (Mercury)','Chandra (Moon)'];
+    const dayLordCycleIndex = [3, 6, 2, 5, 1, 4, 0]; // Sun..Sat
+    const favorablePlanets = ['Guru (Jupiter)', 'Shukra (Venus)', 'Budh (Mercury)'];
+    const sunrise = 6, sunset = 18;
+    const dayHoraLen = (sunset - sunrise) / 12;
+    const nightHoraLen = (24 - (sunset - sunrise)) / 12;
+
+    function buildHoras(dateObj){
+      const weekday = dateObj.getDay();
+      const startIdx = dayLordCycleIndex[weekday];
+      const horas = [];
+      for (let i = 0; i < 12; i++){
+        horas.push({ planet: cycle[(startIdx + i) % 7], startHour: sunrise + i * dayHoraLen });
+      }
+      for (let i = 0; i < 12; i++){
+        horas.push({ planet: cycle[(startIdx + 12 + i) % 7], startHour: sunset + i * nightHoraLen });
+      }
+      return horas;
+    }
+
+    function findNextFavorable(){
+      const now = new Date();
+      for (let dayOffset = 0; dayOffset < 3; dayOffset++){
+        const targetDate = new Date(now);
+        targetDate.setDate(now.getDate() + dayOffset);
+        const horas = buildHoras(targetDate);
+        for (const h of horas){
+          const startDateTime = new Date(targetDate);
+          const hh = Math.floor(h.startHour) % 24;
+          const mm = Math.round((h.startHour % 1) * 60);
+          startDateTime.setHours(hh, mm, 0, 0);
+          if (favorablePlanets.includes(h.planet) && startDateTime > now){
+            return { planet: h.planet, time: startDateTime };
+          }
+        }
+      }
+      return null;
+    }
+
+    function tick(){
+      const next = findNextFavorable();
+      if (!next) return;
+      const now = new Date();
+      let diff = Math.max(0, next.time - now);
+
+      const hours = Math.floor(diff / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+      document.getElementById('countdown-planet').textContent = next.planet + " Hora";
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2,'0');
+
+      const heroBadge = document.getElementById('hero-badge-countdown');
+      if (heroBadge){
+        heroBadge.textContent = String(hours).padStart(2,'0') + ':' + String(minutes).padStart(2,'0') + ':' + String(seconds).padStart(2,'0');
+      }
+
+      if (diff <= 0){
+        setTimeout(tick, 1000); // recalculate next window once this one arrives
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
+<script>
+  // generate a starfield
+  const starContainer = document.getElementById('stars');
+  const starCount = 140;
+  for(let i=0;i<starCount;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random()*2 + 0.6;
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.top = Math.random()*100+'%';
+    s.style.left = Math.random()*100+'%';
+    s.style.animationDuration = (2 + Math.random()*4)+'s';
+    s.style.animationDelay = (Math.random()*4)+'s';
+    starContainer.appendChild(s);
+  }
+</script>
+
+<!-- ===== Disclaimer Gate Modal ===== -->
+<div class="gate-overlay" id="gate-overlay">
+  <div class="gate-box">
+    <div class="gate-title">⚠️ Please Read Before Continuing</div>
+    <p class="gate-text">This group/channel is created purely for <strong>educational and learning purposes</strong>. All views shared are based on financial astrology and are not to be treated as financial or investment advice.</p>
+    <p class="gate-text">Neither the group nor its admins will be responsible for any profit or loss arising from decisions made based on this content. <strong>Please consult your SEBI-registered advisor before making any trading or investment decisions.</strong> I am not a SEBI-registered advisor.</p>
+    <p class="gate-text">हमारा जो भी व्यू यहाँ शेयर किया जाता है, वो ज़्यादातर <strong>ज्योतिष (एस्ट्रोलॉजी) आधारित</strong> होता है और इसे निवेश सलाह नहीं माना जाना चाहिए। कृपया कोई भी ट्रेड या निवेश करने से पहले अपने <strong>SEBI-रजिस्टर्ड एडवाइजर</strong> से सलाह ज़रूर लें।</p>
+    <div class="gate-checkbox-row">
+      <input type="checkbox" id="gate-checkbox">
+      <label for="gate-checkbox">I have read and understood the above disclaimer, and I agree to proceed at my own discretion.</label>
+    </div>
+    <div class="gate-actions">
+      <button class="gate-btn-cancel" id="gate-cancel">Cancel</button>
+      <button class="gate-btn-accept" id="gate-accept">Accept &amp; Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Strategy Access Flow Modal ===== -->
+<div class="gate-overlay" id="brahmastra-overlay">
+  <div class="gate-box">
+    <div class="gate-title">🔱 ब्रह्मास्त्र रोबोट</div>
+    <div style="font-size:13.5px; color:var(--starlight); opacity:0.85; margin: -6px 0 16px; line-height:1.6;">
+      भारत का पहला AI और ज्योतिष आधारित ट्रेडिंग रोबोट — 30+ सालों के डेटा का विश्लेषण करके
+      बाज़ार का एडवांस व्यू, कारण के साथ।
+    </div>
+
+    <div class="why-list" style="margin-bottom:18px;">
+      <div class="why-item">
+        <div class="why-icon">📈</div>
+        <div>
+          <div class="why-text-title">7–10 दिन एडवांस व्यू</div>
+          <div class="why-text-body">Daily और Weekly दोनों एडवांस व्यू — पहले से पता, बाद में मिलान।</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🧠</div>
+        <div>
+          <div class="why-text-title">लॉजिक और कारण</div>
+          <div class="why-text-body">हर एनालिसिस के पीछे की पूरी वजह — कौन-सा factor, कितना असर।</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">⏳</div>
+        <div>
+          <div class="why-text-title">सटीक एस्ट्रो टाइमिंग</div>
+          <div class="why-text-body">इंट्राडे के लिए 10 दिन एडवांस महत्वपूर्ण ज्योतिष समय।</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📊</div>
+        <div>
+          <div class="why-text-title">लाइव गाइडेंस व रिस्क मैनेजमेंट</div>
+          <div class="why-text-body">पूंजी सुरक्षा को ध्यान में रखते हुए लाइव मार्केट उपयोग की सलाह।</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔓</div>
+        <div>
+          <div class="why-text-title">आसान एक्सेस</div>
+          <div class="why-text-body">कभी भी मार्केट-व्यू देखें — Telegram group में हमेशा उपलब्ध।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gate-actions">
+      <button class="gate-btn-cancel" id="brahmastra-cancel">Cancel</button>
+      <a class="gate-btn-accept enabled" href="https://onespace.bio/api/share/telegram/dd0e17ef-f0f5-4c8e-b217-fbec3b233066" target="_blank" rel="noopener noreferrer" style="text-decoration:none; text-align:center; display:inline-block;">Join Now →</a>
+    </div>
+    <div style="text-align:center; font-size:12px; color:var(--starlight); opacity:0.7; margin-top:12px;">
+      जन्माष्टमी ऑफ़र चालू है • Help Desk: @jeetsresearch
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const overlay = document.getElementById('brahmastra-overlay');
+    const cancelBtn = document.getElementById('brahmastra-cancel');
+    if(overlay && cancelBtn){
+      cancelBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('open'); });
+    }
+  })();
+</script>
+
+<div class="gate-overlay" id="strategy-overlay">
+  <div class="gate-box">
+    <div class="gate-title">📈 Strategy Group — Access Steps</div>
+
+    <div class="strategy-step">
+      <div class="strategy-step-num">1</div>
+      <div class="strategy-step-text">
+        Open your <strong>FREE Demat Account</strong> using our link below.
+        <br><a class="strategy-demat-link" href="https://signup.jainam.in?FUtF+AcVfSsOkRcB9QgZQH9nH+JOhGopFHdXk4osIx0=" target="_blank" rel="noopener noreferrer">📂 Open Free Demat Account</a>
+      </div>
+    </div>
+
+    <div class="strategy-step">
+      <div class="strategy-step-num">2</div>
+      <div class="strategy-step-text">Stay <strong>regularly active</strong> on that account for <strong>1 month</strong>.</div>
+    </div>
+
+    <div class="strategy-step">
+      <div class="strategy-step-num">3</div>
+      <div class="strategy-step-text">After 1 month, submit your <strong>Demat Client ID</strong> below.</div>
+    </div>
+
+    <div class="strategy-step">
+      <div class="strategy-step-num">4</div>
+      <div class="strategy-step-text">Once verified, we'll personally send you the <strong>Strategy Group joining link</strong>.</div>
+    </div>
+
+    <label for="strategy-client-id" style="font-size:13px; color:var(--starlight); font-weight:600;">Your Demat Client ID</label>
+    <input type="text" id="strategy-client-id" class="strategy-input" placeholder="Enter your Client ID here">
+
+    <div class="gate-checkbox-row">
+      <input type="checkbox" id="strategy-checkbox">
+      <label for="strategy-checkbox">I have opened my Demat Account using the link above and agree to these steps.</label>
+    </div>
+
+    <div class="gate-actions">
+      <button class="gate-btn-cancel" id="strategy-cancel">Cancel</button>
+      <button class="gate-btn-accept" id="strategy-submit">Submit to Admin</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ===== Disclaimer Gate logic =====
+  (function(){
+    const overlay = document.getElementById('gate-overlay');
+    const checkbox = document.getElementById('gate-checkbox');
+    const acceptBtn = document.getElementById('gate-accept');
+    const cancelBtn = document.getElementById('gate-cancel');
+    let pendingLink = null;
+
+    checkbox.addEventListener('change', function(){
+      acceptBtn.classList.toggle('enabled', checkbox.checked);
+    });
+
+    function openGate(link, gaEvent, gaLocation, fbqContent){
+      pendingLink = { link, gaEvent, gaLocation, fbqContent };
+      checkbox.checked = false;
+      acceptBtn.classList.remove('enabled');
+      overlay.classList.add('open');
+    }
+
+    function closeGate(){
+      overlay.classList.remove('open');
+      pendingLink = null;
+    }
+
+    document.querySelectorAll('.gate-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        openGate(
+          btn.getAttribute('href'),
+          btn.getAttribute('data-ga-event'),
+          btn.getAttribute('data-ga-location'),
+          btn.getAttribute('data-fbq-content')
+        );
+      });
+    });
+
+    acceptBtn.addEventListener('click', function(){
+      if (!checkbox.checked || !pendingLink) return;
+      if (typeof gtag === 'function') {
+        gtag('event', pendingLink.gaEvent, { button_location: pendingLink.gaLocation });
+      }
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: pendingLink.fbqContent });
+      }
+      window.open(pendingLink.link, '_blank', 'noopener,noreferrer');
+      closeGate();
+    });
+
+    cancelBtn.addEventListener('click', closeGate);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeGate();
+    });
+  })();
+</script>
+
+<script>
+  // ===== Strategy Access Flow logic =====
+  (function(){
+    const overlay = document.getElementById('strategy-overlay');
+    const checkbox = document.getElementById('strategy-checkbox');
+    const clientIdInput = document.getElementById('strategy-client-id');
+    const submitBtn = document.getElementById('strategy-submit');
+    const cancelBtn = document.getElementById('strategy-cancel');
+
+    function refreshState(){
+      const ready = checkbox.checked && clientIdInput.value.trim().length > 0;
+      submitBtn.classList.toggle('enabled', ready);
+    }
+    checkbox.addEventListener('change', refreshState);
+    clientIdInput.addEventListener('input', refreshState);
+
+    submitBtn.addEventListener('click', function(){
+      const clientId = clientIdInput.value.trim();
+      if (!checkbox.checked || !clientId) return;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'trend_strategy_submit', { button_location: 'hero' });
+      }
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'trend_strategy_client_id' });
+      }
+
+      const message = "Hi, I've opened my Demat Account for the Strategy Group. My Client ID is: " + clientId;
+      const tgUrl = "https://t.me/Jeetsresearch?text=" + encodeURIComponent(message);
+      window.open(tgUrl, '_blank', 'noopener,noreferrer');
+
+      overlay.classList.remove('open');
+      checkbox.checked = false;
+      clientIdInput.value = '';
+      refreshState();
+    });
+
+    cancelBtn.addEventListener('click', function(){
+      overlay.classList.remove('open');
+    });
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+  })();
+</script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+  }
+</script>
+
+<script>
+  // ===== GSAP ScrollTrigger Animation Engine =====
+  (function(){
+    if (typeof gsap === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    function animateGroup(selector, vars, staggerAmount){
+      const els = document.querySelectorAll(selector);
+      if (!els.length) return;
+      els.forEach((el, i) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: vars.y || 50, scale: vars.scale || 1, x: vars.x || 0 },
+          {
+            opacity: 1, y: 0, scale: 1, x: 0,
+            duration: vars.duration || 0.9,
+            ease: vars.ease || 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            }
+          }
+        );
+      });
+    }
+
+    // Section headings — gentle fade + rise
+    animateGroup('section > .why-heading, section > .market-pulse-label', { y: 26, duration: 0.8 });
+
+    // Grid cards — fade up with scale, staggered via ScrollTrigger's natural per-element trigger
+    animateGroup('.why-item', { y: 40 });
+    animateGroup('.feature-card', { y: 50, scale: 0.94 });
+    animateGroup('.result-card', { y: 50, scale: 0.9 });
+    animateGroup('.tool-card', { y: 50, scale: 0.94 });
+    animateGroup('.calc-card, .advance-today-card, .countdown-card', { y: 40, scale: 0.96 });
+    animateGroup('.advance-archive-item', { y: 24, duration: 0.6 });
+    animateGroup('.signal-card', { y: 36 });
+    animateGroup('.strategy-step', { x: -30, y: 0 });
+
+    // Hero orrery: gentle continuous drift (breathing effect)
+    const orrery = document.querySelector('.orrery, .hero-orrery, svg');
+    if (orrery) {
+      gsap.to(orrery, { y: -10, duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    }
+
+    // Smooth parallax on hero background stars if present
+    const starsEl = document.getElementById('stars');
+    if (starsEl) {
+      gsap.to(starsEl, {
+        yPercent: 15,
+        ease: 'none',
+        scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom top', scrub: 0.6 }
+      });
+    }
+
+    ScrollTrigger.refresh();
+  })();
+</script>
+
+<script>
+  // ===== Multi-Platform Share-to-Unlock Advance View (with verification feel) =====
+  function shareAndUnlock(platform, textId, wrapId){
+    const textEl = document.getElementById(textId);
+    const wrapEl = document.getElementById(wrapId);
+    const realText = textEl.getAttribute('data-real-text');
+    const shareUrl = 'https://thejeetresearch.netlify.app/';
+    const shareMessage = "🪐 Check out today's Advance Astrology Market View from The JeetResearch!";
+    const verifyingEl = wrapEl ? wrapEl.querySelector('.advance-verifying') : null;
+    const shareRowEl = wrapEl ? wrapEl.querySelector('.advance-share-row') : null;
+    const noteEl = wrapEl ? wrapEl.querySelector('.advance-unlock-note') : null;
+
+    switch(platform){
+      case 'whatsapp':
+        window.open('https://wa.me/?text=' + encodeURIComponent(shareMessage + ' ' + shareUrl), '_blank');
+        break;
+      case 'telegram':
+        window.open('https://t.me/share/url?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareMessage), '_blank');
+        break;
+      case 'facebook':
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl), '_blank');
+        break;
+      case 'twitter':
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareMessage) + '&url=' + encodeURIComponent(shareUrl), '_blank');
+        break;
+      case 'copy':
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(shareMessage + ' ' + shareUrl);
+        }
+        break;
+    }
+
+    // Show a brief "verifying" state for a realistic feel before revealing
+    if (shareRowEl) shareRowEl.style.display = 'none';
+    if (noteEl) noteEl.style.display = 'none';
+    if (verifyingEl) verifyingEl.classList.add('show');
+
+    setTimeout(() => {
+      if (verifyingEl) verifyingEl.classList.remove('show');
+      textEl.textContent = realText;
+      textEl.classList.remove('locked');
+      if (wrapEl) wrapEl.style.display = 'none';
+
+      // Apply sentiment-based color to the monday/friday weekend card, if applicable
+      const cardEl = textEl.closest('.advance-monday-card');
+      if (cardEl) {
+        const lower = realText.toLowerCase();
+        cardEl.classList.remove('sentiment-positive','sentiment-negative');
+        if (lower.includes('positive') && !lower.includes('negative')) {
+          cardEl.classList.add('sentiment-positive');
+        } else if (lower.includes('negative') && !lower.includes('positive')) {
+          cardEl.classList.add('sentiment-negative');
+        }
+        // "Both Side" or plain "Volatile" stays neutral amber (no class added)
+      }
+
+      if (typeof gtag === 'function') gtag('event', 'advance_view_unlocked', { view_id: textId, platform: platform });
+    }, 1600);
+  }
+</script>
+
+<script>
+  // ===== Scroll Progress Bar =====
+  (function(){
+    const fillEl = document.getElementById('scroll-progress-fill');
+    if (!fillEl) return;
+    function updateProgress(){
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      fillEl.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  })();
+</script>
+
+<script>
+  // ===== Live Motion Gesture: Tilt Parallax + Shake Detection =====
+  let motionEnabled = false;
+  let lastShakeTime = 0;
+  let lastAcc = { x: null, y: null, z: null };
+
+  function handleOrientation(e){
+    const beta = e.beta || 0;   // front-back tilt (-180 to 180)
+    const gamma = e.gamma || 0; // left-right tilt (-90 to 90)
+    const starsEl = document.getElementById('stars');
+    const bgScene = document.querySelector('.bg-scene');
+    const shiftX = Math.max(-20, Math.min(20, gamma * 0.6));
+    const shiftY = Math.max(-20, Math.min(20, (beta - 45) * 0.4));
+    if (starsEl) starsEl.style.transform = `translate(${shiftX}px, ${shiftY}px)`;
+    if (bgScene) bgScene.style.transform = `translate(${shiftX*0.5}px, ${shiftY*0.5}px)`;
+  }
+
+  function handleMotion(e){
+    const acc = e.accelerationIncludingGravity;
+    if (!acc) return;
+    if (lastAcc.x !== null){
+      const delta = Math.abs(acc.x - lastAcc.x) + Math.abs(acc.y - lastAcc.y) + Math.abs(acc.z - lastAcc.z);
+      const now = Date.now();
+      if (delta > 28 && (now - lastShakeTime) > 2000){
+        lastShakeTime = now;
+        triggerShakeEffect();
+      }
+    }
+    lastAcc = { x: acc.x, y: acc.y, z: acc.z };
+  }
+
+  function triggerShakeEffect(){
+    document.body.classList.add('shaking');
+    setTimeout(() => document.body.classList.remove('shaking'), 500);
+
+    const toast = document.getElementById('shake-toast');
+    if (toast){
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    if (typeof gtag === 'function') gtag('event', 'shake_gesture_detected');
+  }
+
+  function startMotionListeners(){
+    window.addEventListener('deviceorientation', handleOrientation);
+    window.addEventListener('devicemotion', handleMotion);
+    motionEnabled = true;
+    const btn = document.getElementById('motion-enable-btn');
+    if (btn) btn.style.display = 'none';
+  }
+
+  function enableMotionEffects(){
+    if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function'){
+      DeviceMotionEvent.requestPermission().then(state => {
+        if (state === 'granted') startMotionListeners();
+      }).catch(() => {});
+    } else {
+      startMotionListeners();
+    }
+  }
+
+  (function(){
+    const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+    if (!isTouchDevice) return;
+
+    if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function'){
+      // iOS 13+ requires an explicit user tap to grant permission
+      const btn = document.getElementById('motion-enable-btn');
+      if (btn) btn.style.display = 'block';
+    } else if (typeof DeviceOrientationEvent !== 'undefined') {
+      // Android and older iOS — no permission prompt needed
+      startMotionListeners();
+    }
+  })();
+</script>
+
+<script>
+  // ===== Today's Historical Astro-Bias Widget (based on 1,646 trading days, 2020-2026) =====
+  (function(){
+    const biasData = {
+      0: { name: "Surya (Sunday)",   upPct: null },   // insufficient data, market closed
+      1: { name: "Chandra (Monday)", upPct: 57.1 },
+      2: { name: "Mangal (Tuesday)", upPct: 56.1 },
+      3: { name: "Budh (Wednesday)", upPct: 55.8 },
+      4: { name: "Guru (Thursday)",  upPct: 52.9 },
+      5: { name: "Shukra (Friday)",  upPct: 48.8 },
+      6: { name: "Shani (Saturday)", upPct: null }
+    };
+
+    const today = new Date();
+    const dayInfo = biasData[today.getDay()];
+
+    const dayNameEl = document.getElementById('bias-day-name');
+    const barFillEl = document.getElementById('bias-bar-fill');
+    const pctTextEl = document.getElementById('bias-pct-text');
+
+    if (dayNameEl && dayInfo){
+      if (dayInfo.upPct === null){
+        dayNameEl.textContent = dayInfo.name;
+        pctTextEl.textContent = "Market closed — insufficient historical data";
+        barFillEl.style.width = "0%";
+      } else {
+        dayNameEl.textContent = "Today is " + dayInfo.name;
+        barFillEl.style.width = dayInfo.upPct + "%";
+        pctTextEl.textContent = dayInfo.upPct + "% of " + dayInfo.name.split(' ')[1] + "s were historically bullish";
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>
